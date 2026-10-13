@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="ApplicationDate">
+          <DataField>ApplicationDate</DataField>
+        </Field>
+        <Field Name="BeneficiaryAmount">
+          <DataField>BeneficiaryAmount</DataField>
+        </Field>
+        <Field Name="BeneficiaryAmountFormat">
+          <DataField>BeneficiaryAmountFormat</DataField>
+        </Field>
+        <Field Name="BenevolentFund">
+          <DataField>BenevolentFund</DataField>
+        </Field>
+        <Field Name="BenevolentFundFormat">
+          <DataField>BenevolentFundFormat</DataField>
+        </Field>
+        <Field Name="ChargeGL">
+          <DataField>ChargeGL</DataField>
+        </Field>
+        <Field Name="ChequeNo">
+          <DataField>ChequeNo</DataField>
+        </Field>
+        <Field Name="CloseAccount">
+          <DataField>CloseAccount</DataField>
+        </Field>
+        <Field Name="ClosingDate">
+          <DataField>ClosingDate</DataField>
+        </Field>
+        <Field Name="ClosureType">
+          <DataField>ClosureType</DataField>
+        </Field>
+        <Field Name="Contact">
+          <DataField>Contact</DataField>
+        </Field>
+        <Field Name="CustomerFeedback">
+          <DataField>CustomerFeedback</DataField>
+        </Field>
+        <Field Name="Date">
+          <DataField>Date</DataField>
+        </Field>
+        <Field Name="DatetoRejoin">
+          <DataField>DatetoRejoin</DataField>
+        </Field>
+        <Field Name="DividendsRebates">
+          <DataField>DividendsRebates</DataField>
+        </Field>
+        <Field Name="DividendsRebatesFormat">
+          <DataField>DividendsRebatesFormat</DataField>
+        </Field>
+        <Field Name="DutyonExitCharge">
+          <DataField>DutyonExitCharge</DataField>
+        </Field>
+        <Field Name="DutyonExitChargeFormat">
+          <DataField>DutyonExitChargeFormat</DataField>
+        </Field>
+        <Field Name="EarlyExit">
+          <DataField>EarlyExit</DataField>
+        </Field>
+        <Field Name="EmployerCode">
+          <DataField>EmployerCode</DataField>
+        </Field>
+        <Field Name="EnteredBy">
+          <DataField>EnteredBy</DataField>
+        </Field>
+        <Field Name="ExitCharge">
+          <DataField>ExitCharge</DataField>
+        </Field>
+        <Field Name="ExitChargeFormat">
+          <DataField>ExitChargeFormat</DataField>
+        </Field>
+        <Field Name="GlobalDimension1Code">
+          <DataField>GlobalDimension1Code</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code">
+          <DataField>GlobalDimension2Code</DataField>
+        </Field>
+        <Field Name="IDNo">
+          <DataField>IDNo</DataField>
+        </Field>
+        <Field Name="InsuranceAmount">
+          <DataField>InsuranceAmount</DataField>
+        </Field>
+        <Field Name="InsuranceAmountFormat">
+          <DataField>InsuranceAmountFormat</DataField>
+        </Field>
+        <Field Name="InteresttoRejoin">
+          <DataField>InteresttoRejoin</DataField>
+        </Field>
+        <Field Name="MDFContribution">
+          <DataField>MDFContribution</DataField>
+        </Field>
+        <Field Name="MDFContributionFormat">
+          <DataField>MDFContributionFormat</DataField>
+        </Field>
+        <Field Name="MaturityDate">
+          <DataField>MaturityDate</DataField>
+        </Field>
+        <Field Name="MemberName">
+          <DataField>MemberName</DataField>
+        </Field>
+        <Field Name="MemberNo">
+          <DataField>MemberNo</DataField>
+        </Field>
+        <Field Name="MemberSavings">
+          <DataField>MemberSavings</DataField>
+        </Field>
+        <Field Name="MemberSavingsFormat">
+          <DataField>MemberSavingsFormat</DataField>
+        </Field>
+        <Field Name="MemberExitCharge">
+          <DataField>MemberExitCharge</DataField>
+        </Field>
+        <Field Name="MemberExitChargeFormat">
+          <DataField>MemberExitChargeFormat</DataField>
+        </Field>
+        <Field Name="MembershipDate">
+          <DataField>MembershipDate</DataField>
+        </Field>
+        <Field Name="MinuteNos">
+          <DataField>MinuteNos</DataField>
+        </Field>
+        <Field Name="NetRefundable">
+          <DataField>NetRefundable</DataField>
+        </Field>
+        <Field Name="NetRefundableFormat">
+          <DataField>NetRefundableFormat</DataField>
+        </Field>
+        <Field Name="No">
+          <DataField>No</DataField>
+        </Field>
+        <Field Name="NoSeries">
+          <DataField>NoSeries</DataField>
+        </Field>
+        <Field Name="NonWithdrawableSavings">
+          <DataField>NonWithdrawableSavings</DataField>
+        </Field>
+        <Field Name="NonWithdrawableSavingsFormat">
+          <DataField>NonWithdrawableSavingsFormat</DataField>
+        </Field>
+        <Field Name="NoticeNo">
+          <DataField>NoticeNo</DataField>
+        </Field>
+        <Field Name="PartialWithdrawalAmount">
+          <DataField>PartialWithdrawalAmount</DataField>
+        </Field>
+        <Field Name="PartialWithdrawalAmountFormat">
+          <DataField>PartialWithdrawalAmountFormat</DataField>
+        </Field>
+        <Field Name="PayingBank">
+          <DataField>PayingBank</DataField>
+        </Field>
+        <Field Name="Posted">
+          <DataField>Posted</DataField>
+        </Field>
+        <Field Name="ReasonforWithdrawal">
+          <DataField>ReasonforWithdrawal</DataField>
+        </Field>
+        <Field Name="Remarks">
+          <DataField>Remarks</DataField>
+        </Field>
+        <Field Name="RetainedSharesDeductable">
+          <DataField>RetainedSharesDeductable</DataField>
+        </Field>
+        <Field Name="RetainedSharesDeductableFormat">
+          <DataField>RetainedSharesDeductableFormat</DataField>
+        </Field>
+        <Field Name="ShareCapital">
+          <DataField>ShareCapital</DataField>
+        </Field>
+        <Field Name="ShareCapitalFormat">
+          <DataField>ShareCapitalFormat</DataField>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="SystemCreatedAt">
+          <DataField>SystemCreatedAt</DataField>
+        </Field>
+        <Field Name="SystemCreatedBy">
+          <DataField>SystemCreatedBy</DataField>
+        </Field>
+        <Field Name="SystemId">
+          <DataField>SystemId</DataField>
+        </Field>
+        <Field Name="SystemModifiedAt">
+          <DataField>SystemModifiedAt</DataField>
+        </Field>
+        <Field Name="SystemModifiedBy">
+          <DataField>SystemModifiedBy</DataField>
+        </Field>
+        <Field Name="TermSavings">
+          <DataField>TermSavings</DataField>
+        </Field>
+        <Field Name="TermSavingsFormat">
+          <DataField>TermSavingsFormat</DataField>
+        </Field>
+        <Field Name="TotalAppraisal">
+          <DataField>TotalAppraisal</DataField>
+        </Field>
+        <Field Name="TotalAppraisalFormat">
+          <DataField>TotalAppraisalFormat</DataField>
+        </Field>
+        <Field Name="TotalCharges">
+          <DataField>TotalCharges</DataField>
+        </Field>
+        <Field Name="TotalChargesFormat">
+          <DataField>TotalChargesFormat</DataField>
+        </Field>
+        <Field Name="TotalGuaranteed">
+          <DataField>TotalGuaranteed</DataField>
+        </Field>
+        <Field Name="TotalGuaranteedFormat">
+          <DataField>TotalGuaranteedFormat</DataField>
+        </Field>
+        <Field Name="TotalInterest">
+          <DataField>TotalInterest</DataField>
+        </Field>
+        <Field Name="TotalInterestFormat">
+          <DataField>TotalInterestFormat</DataField>
+        </Field>
+        <Field Name="TotalLoanOutstanding">
+          <DataField>TotalLoanOutstanding</DataField>
+        </Field>
+        <Field Name="TotalLoanOutstandingFormat">
+          <DataField>TotalLoanOutstandingFormat</DataField>
+        </Field>
+        <Field Name="TotalPenalty">
+          <DataField>TotalPenalty</DataField>
+        </Field>
+        <Field Name="TotalPenaltyFormat">
+          <DataField>TotalPenaltyFormat</DataField>
+        </Field>
+        <Field Name="TotalPrincipal">
+          <DataField>TotalPrincipal</DataField>
+        </Field>
+        <Field Name="TotalPrincipalFormat">
+          <DataField>TotalPrincipalFormat</DataField>
+        </Field>
+        <Field Name="TotalRefundable">
+          <DataField>TotalRefundable</DataField>
+        </Field>
+        <Field Name="TotalRefundableFormat">
+          <DataField>TotalRefundableFormat</DataField>
+        </Field>
+        <Field Name="TotalSavings">
+          <DataField>TotalSavings</DataField>
+        </Field>
+        <Field Name="TotalSavingsFormat">
+          <DataField>TotalSavingsFormat</DataField>
+        </Field>
+        <Field Name="Transaction">
+          <DataField>Transaction</DataField>
+        </Field>
+        <Field Name="TransferAccount">
+          <DataField>TransferAccount</DataField>
+        </Field>
+        <Field Name="TransferAccountName">
+          <DataField>TransferAccountName</DataField>
+        </Field>
+        <Field Name="WithdrawableSavings">
+          <DataField>WithdrawableSavings</DataField>
+        </Field>
+        <Field Name="WithdrawableSavingsFormat">
+          <DataField>WithdrawableSavingsFormat</DataField>
+        </Field>
+        <Field Name="WithdrawalType">
+          <DataField>WithdrawalType</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

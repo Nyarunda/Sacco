@@ -1,0 +1,678 @@
+namespace UnitedWomen.UnitedWomen;
+
+codeunit 52188481 "Loan Graduation Calculator"
+{
+
+    trigger OnRun()
+    begin
+    end;
+
+    var
+        MembersRegister: Record Members;
+        MemberLedgerEntry: Record "Credit Ledger Entry";
+        LoansRegister: Record Loans;
+        LoanRepaySchedule: Record "Loan Repayment Schedule";
+        GraduationScore: Record "Loan Graduation Score";
+
+
+    procedure CalculateGraduationScore(MemberNo: Code[20]): Decimal
+    var
+        RepaymentScore: Decimal;
+        SavingsScore: Decimal;
+        RatioScore: Decimal;
+        MembershipScore: Decimal;
+        CRBScore: Decimal;
+        FinalScore: Decimal;
+        ScorePercentage: Decimal;
+    begin
+        IF GraduationScore.GET(MemberNo, TODAY) THEN
+            GraduationScore.DELETE;
+
+        GraduationScore.INIT;
+        GraduationScore."Member No" := MemberNo;
+        GraduationScore."Evaluation Date" := TODAY;
+        GraduationScore."Computed By" := USERID;
+        GraduationScore."Computed At" := CURRENTDATETIME;
+        GraduationScore."Calculation Version" := 'V1.0';
+
+        RepaymentScore := CalculateRepaymentHistoryScore(MemberNo);
+        SavingsScore := CalculateSavingsConsistencyScore(MemberNo);
+        CRBScore := CalculateCRBScore(MemberNo);
+        RatioScore := CalculateLoanToSavingsRatioScore(MemberNo);
+        MembershipScore := CalculateMembershipLengthScore(MemberNo);
+
+        FinalScore := RepaymentScore + SavingsScore + RatioScore + MembershipScore;
+        ScorePercentage := FinalScore;
+
+        GraduationScore."Repayment History Score" := RepaymentScore;
+        GraduationScore."Savings Consistency Score" := SavingsScore;
+        GraduationScore."CRB Score" := CRBScore;
+        GraduationScore."Loan To Savings Ratio Score" := RatioScore;
+        GraduationScore."Membership Length Score" := MembershipScore;
+        GraduationScore."Final Score" := FinalScore;
+        GraduationScore."Score Percentage" := ScorePercentage;
+        GraduationScore."Eligible Hela Amount" := CalculateEligibleAmount(ScorePercentage);
+        GraduationScore."Qualification Tier" := DetermineQualificationTier(ScorePercentage);
+        GraduationScore."Risk Category" := DetermineRiskCategory(ScorePercentage);
+        GraduationScore."Is Qualified" := (ScorePercentage >= 50);
+
+        GraduationScore.INSERT;
+
+        EXIT(FinalScore);
+    end;
+
+    local procedure CalculateRepaymentHistoryScore(MemberNo: Code[20]): Decimal
+    var
+        TotalMobileLoans: Integer;
+        LoansInArrears: Integer;
+        DefaultedLoans: Integer;
+        MaxArrearsDays: Integer;
+        TotalRepayments: Integer;
+        OnTimeRepayments: Integer;
+        OnTimePercentage: Decimal;
+        HasRollovers: Boolean;
+        HasRestructuring: Boolean;
+        Score: Decimal;
+        Category: Integer;
+        CurrentArrearsDays: Integer;
+        TotalTopups: Integer;
+        TotalBridging: Integer;
+    begin
+        TotalMobileLoans := 0;
+        LoansInArrears := 0;
+        DefaultedLoans := 0;
+        MaxArrearsDays := 0;
+        TotalRepayments := 0;
+        OnTimeRepayments := 0;
+        HasRollovers := FALSE;
+        HasRestructuring := FALSE;
+        TotalTopups := 0;
+        TotalBridging := 0;
+
+        LoansRegister.RESET;
+        LoansRegister.SETRANGE("Member No.", MemberNo);
+        LoansRegister.SETFILTER("Loan Product Type", '<>%1&<>%2', 'HELA', 'MOBILE LOAN');
+        LoansRegister.SETFILTER("Application Date", '>=%1', CALCDATE('-12M', TODAY));
+        //LoansRegister.SETFILTER("Outstanding Balance",'>0');
+        IF LoansRegister.FINDSET THEN BEGIN
+            REPEAT
+
+                CheckForRolloversAndBridging(LoansRegister."Loan No.", HasRollovers, HasRestructuring,
+                                            TotalTopups, TotalBridging);
+
+            UNTIL LoansRegister.NEXT = 0;
+        END;
+
+        LoansRegister.RESET;
+        LoansRegister.SETRANGE("Member No.", MemberNo);
+        LoansRegister.SETFILTER("Loan Product Type", '%1|%2', 'HELA', 'MOBILE LOAN');
+        LoansRegister.SETFILTER("Application Date", '>=%1', CALCDATE('-12M', TODAY));
+        //LoansRegister.SETFILTER("Outstanding Balance",'>0');
+        IF LoansRegister.FINDSET THEN BEGIN
+            REPEAT
+                TotalMobileLoans += 1;
+
+                IF LoansRegister.Defaulted = TRUE THEN
+                    DefaultedLoans += 1;
+
+                CheckForRolloversAndBridging(LoansRegister."Loan No.", HasRollovers, HasRestructuring,
+                                            TotalTopups, TotalBridging);
+
+                LoansRegister.CALCFIELDS("Outstanding Principal");
+
+                IF LoansRegister."Loans Category-SASRA" IN [
+                    LoansRegister."Loans Category-SASRA"::Watch,
+                    LoansRegister."Loans Category-SASRA"::Substandard,
+                    LoansRegister."Loans Category-SASRA"::Doubtful,
+                    LoansRegister."Loans Category-SASRA"::Loss] THEN BEGIN
+                    LoansInArrears += 1;
+
+                    LoanRepaySchedule.RESET;
+                    LoanRepaySchedule.SETRANGE("Loan No.", LoansRegister."Loan No.");
+                    LoanRepaySchedule.SETFILTER("Repayment Date", '<%1', TODAY);
+                    //LoanRepaySchedule.SETRANGE("Active Schedule", TRUE);
+
+                    IF LoanRepaySchedule.FINDSET THEN BEGIN
+                        REPEAT
+                            IF NOT HasRepaymentBeenMade(LoansRegister."Loan No.", LoanRepaySchedule."Repayment Date") THEN BEGIN
+                                CurrentArrearsDays := TODAY - LoanRepaySchedule."Repayment Date";
+                                IF CurrentArrearsDays > MaxArrearsDays THEN
+                                    MaxArrearsDays := CurrentArrearsDays;
+                            END;
+                        UNTIL LoanRepaySchedule.NEXT = 0;
+                    END;
+                END;
+
+                AnalyzeLoanRepaymentTiming(LoansRegister."Loan No.", TotalRepayments, OnTimeRepayments);
+
+            UNTIL LoansRegister.NEXT = 0;
+        END;
+
+        IF TotalRepayments > 0 THEN
+            OnTimePercentage := (OnTimeRepayments / TotalRepayments) * 100
+        ELSE
+            OnTimePercentage := 0;
+
+        IF (MaxArrearsDays = 0) AND (TotalMobileLoans >= 2) AND
+           (DefaultedLoans = 0) AND (NOT HasRollovers) AND (NOT HasRestructuring) THEN BEGIN
+            Score := 50;
+            Category := 3;
+        END
+        ELSE IF (MaxArrearsDays > 0) AND (MaxArrearsDays <= 30) AND
+                (LoansInArrears <= 1) AND (DefaultedLoans = 0) AND
+                (OnTimePercentage >= 80) THEN BEGIN
+            Score := 22 + ((OnTimePercentage - 80) / 10) * 11.11;
+            IF Score > 33 THEN Score := 33;
+            Category := 2;
+        END
+        ELSE IF (MaxArrearsDays > 30) AND (MaxArrearsDays <= 60) AND
+                (DefaultedLoans = 0) THEN BEGIN
+            Score := 22 - ((MaxArrearsDays - 30) / 30) * 11.11;
+            IF Score < 11 THEN Score := 11;
+            Category := 1;
+        END
+        ELSE BEGIN
+            IF MaxArrearsDays > 60 THEN
+                Score := 0
+            ELSE IF DefaultedLoans > 0 THEN
+                Score := 6
+            ELSE IF LoansInArrears >= 3 THEN
+                Score := 9
+            ELSE
+                Score := 11;
+            Category := 0;
+        END;
+
+        GraduationScore."Total Topups" := TotalTopups;
+        GraduationScore."No Of Mobile Loans" := TotalMobileLoans;
+        GraduationScore."Max Arrears Days" := MaxArrearsDays;
+        GraduationScore."Loans In Arrears" := LoansInArrears;
+        GraduationScore."Defaulted Loans" := DefaultedLoans;
+        GraduationScore."On Time Payment %" := OnTimePercentage;
+        GraduationScore."Repayment Category" := Category;
+        GraduationScore."Has Rollovers" := HasRollovers;
+        GraduationScore."Has Restructuring" := HasRestructuring;
+
+        EXIT(Score);
+    end;
+
+    local procedure CheckForRolloversAndBridging(LoanNo: Code[20]; var HasRollovers: Boolean; var HasRestructuring: Boolean; var TotalTopups: Integer; var TotalBridging: Integer)
+    var
+        TempLoansRegister: Record Loans Temporary;
+        TopupAmount: Decimal;
+        HasTopupFromAmount: Boolean;
+        HasTopupFromOffset: Boolean;
+    begin
+        HasTopupFromAmount := FALSE;
+        HasTopupFromOffset := FALSE;
+
+        IF TempLoansRegister.GET(LoanNo) THEN BEGIN
+            TempLoansRegister.CALCFIELDS("Top Up Amount");
+            TopupAmount := TempLoansRegister."Top Up Amount";
+
+
+            IF (TempLoansRegister."Completion Date" < TODAY) AND (TempLoansRegister."Outstanding Principal" > 0) THEN BEGIN
+                HasRollovers := TRUE;
+            END;
+
+            /*IF TopupAmount > 0 THEN BEGIN
+              HasRollovers := TRUE;
+              HasTopupFromAmount := TRUE;
+            END;*/
+
+            /* IF TempLoansRegister."4 % Bridging" THEN BEGIN
+               HasRestructuring := TRUE;
+               TotalBridging += 1;
+             END;*/
+
+            IF TempLoansRegister."Loan Rescheduled" THEN BEGIN
+                HasRestructuring := TRUE;
+            END;
+
+            /* IF TempLoansRegister."Bridging Loan Posted" THEN BEGIN
+               HasRestructuring := TRUE;
+             END;*/
+        END;
+
+        /*LoanOffsetDetails.RESET;
+        LoanOffsetDetails.SETRANGE("Loan Top Up",LoanNo);
+        IF LoanOffsetDetails.FINDFIRST THEN BEGIN
+          HasRollovers := TRUE;
+          HasTopupFromOffset := TRUE;
+        END;*/
+
+        IF HasTopupFromAmount OR HasTopupFromOffset THEN
+            TotalTopups += 1;
+
+    end;
+
+    local procedure HasRepaymentBeenMade(LoanNo: Code[20]; ExpectedDate: Date): Boolean
+    var
+        TotalPaid: Decimal;
+    begin
+        TotalPaid := 0;
+
+        MemberLedgerEntry.RESET;
+        MemberLedgerEntry.SETRANGE("Loan No.", LoanNo);
+        MemberLedgerEntry.SETFILTER("Transaction Type", '%1|%2',
+          MemberLedgerEntry."Transaction Type"::"Principal Repayment",
+          MemberLedgerEntry."Transaction Type"::"Interest Paid");
+        MemberLedgerEntry.SETFILTER("Posting Date", '%1..%2',
+          CALCDATE('-7D', ExpectedDate),
+          CALCDATE('+30D', ExpectedDate));
+
+        IF MemberLedgerEntry.FINDSET THEN BEGIN
+            REPEAT
+                TotalPaid += ABS(MemberLedgerEntry.Amount);
+            UNTIL MemberLedgerEntry.NEXT = 0;
+        END;
+
+        EXIT(TotalPaid > 0);
+    end;
+
+    local procedure AnalyzeLoanRepaymentTiming(LoanNo: Code[20]; var TotalRepayments: Integer; var OnTimeRepayments: Integer)
+    var
+        RepaySchedule: Record "Loan Repayment Schedule";
+        ExpectedDate: Date;
+        ActualDate: Date;
+        LoansRegister2: Record Loans;
+        RepaymentInterval: Text;
+        CompletionDate: Date;
+        EntryNo: Text;
+        TotalRepaymentsCheck: Integer;
+    begin
+        /*RepaySchedule.RESET;
+        RepaySchedule.SETRANGE("Loan No.",LoanNo);
+        RepaySchedule.SETRANGE("Active Schedule",TRUE);
+        
+        IF RepaySchedule.FINDSET THEN BEGIN
+          REPEAT
+            TotalRepayments += 1;
+            ExpectedDate := RepaySchedule."Repayment Date";
+        
+            MemberLedgerEntry.RESET;
+            MemberLedgerEntry.SETRANGE("Loan No",LoanNo);
+            MemberLedgerEntry.SETFILTER("Transaction Type",'%1|%2',
+              MemberLedgerEntry."Transaction Type"::Repayment,
+              MemberLedgerEntry."Transaction Type"::"Interest Paid");
+            MemberLedgerEntry.SETFILTER("Posting Date",'%1..%2',
+              CALCDATE('-7D',ExpectedDate),
+              CALCDATE('+30D',ExpectedDate));
+        
+            IF MemberLedgerEntry.FINDFIRST THEN BEGIN
+              ActualDate := MemberLedgerEntry."Posting Date";
+        
+              IF ActualDate <= CALCDATE('+7D',ExpectedDate) THEN
+                OnTimeRepayments += 1;
+            END;
+        
+          UNTIL RepaySchedule.NEXT = 0;
+        END;*/
+        RepaySchedule.RESET;
+        RepaySchedule.SETRANGE("Loan No.", LoanNo);
+        //RepaySchedule.SETRANGE("Active Schedule", TRUE);
+        IF RepaySchedule.FINDSET THEN BEGIN
+            REPEAT
+                TotalRepayments += 1;
+                ExpectedDate := RepaySchedule."Repayment Date";
+                MemberLedgerEntry.RESET;
+                MemberLedgerEntry.SETRANGE("Loan No.", LoanNo);
+                MemberLedgerEntry.SETFILTER("Transaction Type", '%1|%2',
+                  MemberLedgerEntry."Transaction Type"::"Principal Repayment",
+                  MemberLedgerEntry."Transaction Type"::"Interest Paid");
+                MemberLedgerEntry.SETFILTER("Posting Date", '%1..%2',
+                  CALCDATE('-7D', ExpectedDate),
+                  CALCDATE('+30D', ExpectedDate));
+                IF MemberLedgerEntry.FINDFIRST THEN BEGIN
+                    ActualDate := MemberLedgerEntry."Posting Date";
+                    IF ActualDate <= CALCDATE('+7D', ExpectedDate) THEN
+                        OnTimeRepayments += 1;
+                END;
+            UNTIL RepaySchedule.NEXT = 0;
+        END ELSE BEGIN
+            // No schedule exists - analyze based on loan register data
+            LoansRegister2.GET(LoanNo);
+            LoansRegister2.CALCFIELDS("Outstanding Principal");
+            // Determine repayment frequency
+            RepaymentInterval := '<1M>'; // Default monthly
+            IF LoansRegister2."Repayment Frequency" = LoansRegister2."Repayment Frequency"::Daily THEN
+                RepaymentInterval := '<1D>'
+            ELSE IF LoansRegister2."Repayment Frequency" = LoansRegister2."Repayment Frequency"::Weekly THEN
+                RepaymentInterval := '<1W>'
+            ELSE IF LoansRegister2."Repayment Frequency" = LoansRegister2."Repayment Frequency"::Quarterly THEN
+                RepaymentInterval := '<3M>';
+
+            // Start from first expected repayment date
+            IF LoansRegister2."Repayment Start Date" <> 0D THEN
+                ExpectedDate := LoansRegister2."Repayment Start Date"
+            ELSE IF LoansRegister2."Disbursement Date" <> 0D THEN
+                ExpectedDate := CALCDATE(RepaymentInterval, LoansRegister2."Disbursement Date")
+            ELSE IF LoansRegister2."Repayment Start Date" <> 0D THEN
+                ExpectedDate := CALCDATE(RepaymentInterval, LoansRegister2."Repayment Start Date");
+
+            /*ELSE EXIT;*/
+
+            // Determine completion date
+            IF ExpectedDate <> 0D THEN BEGIN
+                IF LoansRegister2."Completion Date" <> 0D THEN
+                    CompletionDate := LoansRegister2."Completion Date"
+                ELSE IF LoansRegister2.Installments > 0 THEN
+                    CompletionDate := CALCDATE('<' + FORMAT(LoansRegister2.Installments) + 'M>', ExpectedDate)
+                ELSE
+                    CompletionDate := TODAY;
+            END ELSE
+                CompletionDate := TODAY;
+
+            // Iterate through expected repayment periods
+            WHILE ((ExpectedDate <= CompletionDate) AND (ExpectedDate <= TODAY)) OR (LoansRegister2."Outstanding Principal" <= 0) DO BEGIN
+                TotalRepaymentsCheck += 1;
+
+                MemberLedgerEntry.RESET;
+                MemberLedgerEntry.SETRANGE("Loan No.", LoanNo);
+                MemberLedgerEntry.SETFILTER("Transaction Type", '%1',
+                  MemberLedgerEntry."Transaction Type"::"Principal Repayment");
+                //MemberLedgerEntry."Transaction Type"::"Interest Paid");
+                IF ExpectedDate <= TODAY THEN
+                    MemberLedgerEntry.SETFILTER("Posting Date", '%1..%2', CALCDATE('-21D', ExpectedDate), CALCDATE('+7D', ExpectedDate))
+                ELSE
+                    MemberLedgerEntry.SETFILTER("Posting Date", '..%1',
+                    CALCDATE('+7D', ExpectedDate));
+
+                IF MemberLedgerEntry.FINDFIRST THEN BEGIN
+                    IF STRPOS(EntryNo, FORMAT(MemberLedgerEntry."Entry No.")) = 0 THEN BEGIN
+                        IF EntryNo = '' THEN
+                            EntryNo += FORMAT(MemberLedgerEntry."Entry No.")
+                        ELSE
+                            EntryNo += '|' + FORMAT(MemberLedgerEntry."Entry No.");
+                        TotalRepayments += 1;
+                        ActualDate := MemberLedgerEntry."Posting Date";
+                        //IF ActualDate <= CALCDATE('+7D', ExpectedDate) THEN
+                        IF ActualDate <= ExpectedDate THEN
+                            OnTimeRepayments += 1;
+                    END;
+                END;
+
+                // Move to next expected repayment date
+                ExpectedDate := CALCDATE(RepaymentInterval, ExpectedDate);
+
+                // Safety check to prevent infinite loop
+                IF TotalRepaymentsCheck >= 100 THEN
+                    EXIT;
+            END;
+        END;
+
+    end;
+
+    local procedure CalculateSavingsConsistencyScore(MemberNo: Code[20]): Decimal
+    var
+        MonthsWithDeposits: Integer;
+        TotalMonths: Integer;
+        ConsistencyPercentage: Decimal;
+        Score: Decimal;
+        Category: Integer;
+        CurrentMonth: Date;
+        MonthCounter: Integer;
+        SavAccLedgerEntry: record "Savings Ledger Entry";
+    begin
+        MonthsWithDeposits := 0;
+        TotalMonths := 12;
+
+        FOR MonthCounter := 0 TO 11 DO BEGIN
+            CurrentMonth := CALCDATE('-' + FORMAT(MonthCounter) + 'M', TODAY);
+
+            SavAccLedgerEntry.RESET;
+            SavAccLedgerEntry.SETRANGE("Member No.", MemberNo);
+            SavAccLedgerEntry.SETRANGE("Posting Date",
+              CALCDATE('-CM', CurrentMonth),
+              CALCDATE('CM', CurrentMonth));
+
+            IF MemberLedgerEntry.FINDFIRST THEN
+                MonthsWithDeposits += 1;
+        END;
+
+        IF TotalMonths > 0 THEN
+            ConsistencyPercentage := (MonthsWithDeposits / TotalMonths) * 100
+        ELSE
+            ConsistencyPercentage := 0;
+
+        IF ConsistencyPercentage = 100 THEN BEGIN
+            Score := 25;
+            Category := 3;
+        END
+        ELSE IF ConsistencyPercentage >= 75 THEN BEGIN
+            Score := 19 + ((ConsistencyPercentage - 75) / 25) * 6;
+            Category := 2;
+        END
+        ELSE IF ConsistencyPercentage >= 50 THEN BEGIN
+            Score := 10 + ((ConsistencyPercentage - 50) / 25) * 9;
+            Category := 1;
+        END
+        ELSE BEGIN
+            Score := (ConsistencyPercentage / 50) * 10;
+            IF Score > 10 THEN Score := 10;
+            Category := 0;
+        END;
+
+        GraduationScore."Months With Deposits" := MonthsWithDeposits;
+        GraduationScore."Total Months Evaluated" := TotalMonths;
+        GraduationScore."Savings Consistency %" := ConsistencyPercentage;
+        GraduationScore."Savings Category" := Category;
+
+        EXIT(Score);
+    end;
+
+    local procedure CalculateLoanToSavingsRatioScore(MemberNo: Code[20]): Decimal
+    var
+        TotalLoanBalance: Decimal;
+        TotalSavings: Decimal;
+        Ratio: Decimal;
+        Score: Decimal;
+        Category: Integer;
+        SavingsRegister: Record "Savings Accounts";
+    begin
+        TotalLoanBalance := 0;
+        TotalSavings := 0;
+
+        LoansRegister.RESET;
+        LoansRegister.SETRANGE("Member No.", MemberNo);
+        LoansRegister.SETAUTOCALCFIELDS("Outstanding Principal");
+        LoansRegister.SETFILTER("Outstanding Principal", '>0');
+        IF LoansRegister.FINDSET THEN BEGIN
+            REPEAT
+                TotalLoanBalance += LoansRegister."Outstanding Principal";
+            UNTIL LoansRegister.NEXT = 0;
+        END;
+
+        IF SavingsRegister.GET(MemberNo) THEN BEGIN
+            TotalSavings := SavingsRegister."Current Balance";
+        END;
+
+        IF TotalSavings > 0 THEN
+            Ratio := TotalLoanBalance / TotalSavings
+        ELSE IF TotalLoanBalance > 0 THEN
+            Ratio := 999
+        ELSE
+            Ratio := 0;
+
+        IF Ratio <= 1 THEN BEGIN
+            Score := 14 + (1 - Ratio);
+            IF Score > 15 THEN Score := 15;
+            Category := 0;
+        END
+        ELSE IF (Ratio > 1) AND (Ratio <= 2) THEN BEGIN
+            Score := 9 + ((2 - Ratio) * 3);
+            Category := 1;
+        END
+        ELSE IF (Ratio > 2) AND (Ratio <= 3) THEN BEGIN
+            Score := 5 + ((3 - Ratio) * 3);
+            Category := 2;
+        END
+        ELSE BEGIN
+            IF Ratio < 999 THEN
+                Score := 3 / Ratio
+            ELSE
+                Score := 0;
+            IF Score > 3 THEN Score := 3;
+            Category := 3;
+        END;
+
+        GraduationScore."Total Loan Balance" := TotalLoanBalance;
+        GraduationScore."Total Savings" := TotalSavings;
+        GraduationScore."Loan To Savings Ratio" := Ratio;
+        GraduationScore."Ratio Category" := Category;
+
+        EXIT(Score);
+    end;
+
+    local procedure CalculateMembershipLengthScore(MemberNo: Code[20]): Decimal
+    var
+        MembershipYears: Decimal;
+        Score: Decimal;
+        Category: Integer;
+        RegistrationDate: Date;
+    begin
+        IF MembersRegister.GET(MemberNo) THEN
+            RegistrationDate := MembersRegister."Registration Date"
+        ELSE
+            EXIT(0);
+
+        IF RegistrationDate <> 0D THEN
+            MembershipYears := (TODAY - RegistrationDate) / 365
+        ELSE
+            MembershipYears := 0;
+
+        IF MembershipYears >= 3 THEN BEGIN
+            Score := 10;
+            Category := 2;
+        END
+        ELSE IF MembershipYears >= 1 THEN BEGIN
+            Score := 6 + ((MembershipYears - 1) / 2) * 2;
+            IF Score > 8 THEN Score := 8;
+            Category := 1;
+        END
+        ELSE BEGIN
+            Score := MembershipYears * 4;
+            IF Score > 4 THEN Score := 4;
+            Category := 0;
+        END;
+
+        GraduationScore."Membership Start Date" := RegistrationDate;
+        GraduationScore."Membership Years" := MembershipYears;
+        GraduationScore."Membership Category" := Category;
+
+        EXIT(Score);
+    end;
+
+    local procedure CalculateCRBScore(MemberNo: Code[20]): Decimal
+    var
+        Score: Decimal;
+        Category: Integer;
+        CRBStatus: Text[50];
+    begin
+        LoansRegister.RESET;
+        LoansRegister.SETRANGE("Member No.", MemberNo);
+        LoansRegister.SETRANGE("Loans Category-SASRA", LoansRegister."Loans Category-SASRA"::Loss);
+        LoansRegister.SETFILTER("Outstanding Principal", '>0');
+        IF LoansRegister.FINDFIRST THEN BEGIN
+            Score := 0;
+            Category := 0;
+            CRBStatus := 'Has Default History';
+        END ELSE BEGIN
+            LoansRegister.RESET;
+            LoansRegister.SETRANGE("Member No.", MemberNo);
+            LoansRegister.SETFILTER("Loans Category-SASRA", '<>%1', LoansRegister."Loans Category-SASRA"::Performing);
+
+            IF LoansRegister.FINDFIRST THEN BEGIN
+                Score := 0;
+                Category := 2;
+                CRBStatus := 'Has Active Arrears';
+            END ELSE BEGIN
+                Score := 0;
+                Category := 3;
+                CRBStatus := 'Clean Record';
+            END;
+        END;
+
+        GraduationScore."CRB Category" := Category;
+        GraduationScore."CRB Status" := CRBStatus;
+        GraduationScore."CRB Last Check Date" := TODAY;
+
+        EXIT(Score);
+    end;
+
+    local procedure CalculateEligibleAmount(ScorePercentage: Decimal): Decimal
+    var
+        EligibleAmount: Decimal;
+    begin
+        IF ScorePercentage >= 80 THEN
+            EligibleAmount := 100000
+        ELSE IF ScorePercentage >= 65 THEN
+            EligibleAmount := 50000
+        ELSE IF ScorePercentage >= 50 THEN
+            EligibleAmount := 20000
+        ELSE IF ScorePercentage >= 40 THEN
+            EligibleAmount := 5000
+        ELSE
+            EligibleAmount := 0;
+
+        EXIT(EligibleAmount);
+    end;
+
+    local procedure DetermineQualificationTier(ScorePercentage: Decimal): Integer
+    begin
+        IF ScorePercentage >= 80 THEN
+            EXIT(3)
+        ELSE IF ScorePercentage >= 65 THEN
+            EXIT(2)
+        ELSE IF ScorePercentage >= 50 THEN
+            EXIT(1)
+        ELSE
+            EXIT(0);
+    end;
+
+    local procedure DetermineRiskCategory(ScorePercentage: Decimal): Integer
+    begin
+        IF ScorePercentage >= 80 THEN
+            EXIT(4)
+        ELSE IF ScorePercentage >= 65 THEN
+            EXIT(3)
+        ELSE IF ScorePercentage >= 50 THEN
+            EXIT(2)
+        ELSE IF ScorePercentage >= 40 THEN
+            EXIT(1)
+        ELSE
+            EXIT(0);
+    end;
+
+    procedure GetLatestScore(MemberNo: Code[20]): Decimal
+    begin
+        GraduationScore.RESET;
+        GraduationScore.SETRANGE("Member No", MemberNo);
+        GraduationScore.SETCURRENTKEY("Member No", "Evaluation Date");
+        GraduationScore.ASCENDING(FALSE);
+
+        IF GraduationScore.FINDFIRST THEN
+            EXIT(GraduationScore."Final Score")
+        ELSE
+            EXIT(0);
+    end;
+
+    procedure GetEligibleHelaAmount(MemberNo: Code[20]): Decimal
+    begin
+        GraduationScore.RESET;
+        GraduationScore.SETRANGE("Member No", MemberNo);
+        GraduationScore.SETCURRENTKEY("Member No", "Evaluation Date");
+        GraduationScore.ASCENDING(FALSE);
+        //GraduationScore.SETRANGE("Evaluation Date",CALCDATE('-CM',TODAY),CALCDATE('-CM-1D',TODAY));
+        GraduationScore.SETRANGE("Evaluation Date", TODAY);
+        IF GraduationScore.FINDLAST THEN
+            EXIT(GraduationScore."Eligible Hela Amount")
+        ELSE BEGIN
+            CalculateGraduationScore(MemberNo);
+            IF GraduationScore.FINDFIRST THEN
+                EXIT(GraduationScore."Eligible Hela Amount")
+            ELSE
+                EXIT(0);
+        END;
+    end;
+}

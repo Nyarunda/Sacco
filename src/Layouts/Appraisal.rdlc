@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="ReportForNavId_1">
+          <DataField>ReportForNavId_1</DataField>
+        </Field>
+        <Field Name="AppraisalNo_HRIndividualTargetsHeader">
+          <DataField>AppraisalNo_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="AppraisalPeriod_HRIndividualTargetsHeader">
+          <DataField>AppraisalPeriod_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="AppraisalDate_HRIndividualTargetsHeader">
+          <DataField>AppraisalDate_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="EmployeeNo_HRIndividualTargetsHeader">
+          <DataField>EmployeeNo_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="FinancialTargetedScore_HRIndividualTargetsHeader">
+          <DataField>FinancialTargetedScore_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="FinancialTargetedScore_HRIndividualTargetsHeaderFormat">
+          <DataField>FinancialTargetedScore_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="AchievedFinancialScore_HRIndividualTargetsHeader">
+          <DataField>AchievedFinancialScore_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="AchievedFinancialScore_HRIndividualTargetsHeaderFormat">
+          <DataField>AchievedFinancialScore_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="UnachievedTargets_HRIndividualTargetsHeader">
+          <DataField>UnachievedTargets_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="UnachievedTargets_HRIndividualTargetsHeaderFormat">
+          <DataField>UnachievedTargets_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="EmployeeName_HRIndividualTargetsHeader">
+          <DataField>EmployeeName_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="TrainingTargetedScore_HRIndividualTargetsHeader">
+          <DataField>TrainingTargetedScore_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="TrainingTargetedScore_HRIndividualTargetsHeaderFormat">
+          <DataField>TrainingTargetedScore_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="ServiceDeliveryTargetScore_HRIndividualTargetsHeader">
+          <DataField>ServiceDeliveryTargetScore_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="ServiceDeliveryTargetScore_HRIndividualTargetsHeaderFormat">
+          <DataField>ServiceDeliveryTargetScore_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="CustomerTargetScore_HRIndividualTargetsHeader">
+          <DataField>CustomerTargetScore_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="CustomerTargetScore_HRIndividualTargetsHeaderFormat">
+          <DataField>CustomerTargetScore_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="CustomerAchievedScore_HRIndividualTargetsHeader">
+          <DataField>CustomerAchievedScore_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="CustomerAchievedScore_HRIndividualTargetsHeaderFormat">
+          <DataField>CustomerAchievedScore_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="ServiceDeliveryAchieved_HRIndividualTargetsHeader">
+          <DataField>ServiceDeliveryAchieved_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="ServiceDeliveryAchieved_HRIndividualTargetsHeaderFormat">
+          <DataField>ServiceDeliveryAchieved_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="TrainingAchievedScore_HRIndividualTargetsHeader">
+          <DataField>TrainingAchievedScore_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="TrainingAchievedScore_HRIndividualTargetsHeaderFormat">
+          <DataField>TrainingAchievedScore_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="Status_HRIndividualTargetsHeader">
+          <DataField>Status_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="ResponsibilityCenter_HRIndividualTargetsHeader">
+          <DataField>ResponsibilityCenter_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="GlobalDimension1Code_HRIndividualTargetsHeader">
+          <DataField>GlobalDimension1Code_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code_HRIndividualTargetsHeader">
+          <DataField>GlobalDimension2Code_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="ShortcutDimension3Code_HRIndividualTargetsHeader">
+          <DataField>ShortcutDimension3Code_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="ShortcutDimension4Code_HRIndividualTargetsHeader">
+          <DataField>ShortcutDimension4Code_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="AppraisalType_HRIndividualTargetsHeader">
+          <DataField>AppraisalType_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="Noseries_HRIndividualTargetsHeader">
+          <DataField>Noseries_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="AppraisalYear_HRIndividualTargetsHeader">
+          <DataField>AppraisalYear_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="FinanceRating_HRIndividualTargetsHeader">
+          <DataField>FinanceRating_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="FinanceRating_HRIndividualTargetsHeaderFormat">
+          <DataField>FinanceRating_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="CustomerRating_HRIndividualTargetsHeader">
+          <DataField>CustomerRating_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="CustomerRating_HRIndividualTargetsHeaderFormat">
+          <DataField>CustomerRating_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="TrainingRating_HRIndividualTargetsHeader">
+          <DataField>TrainingRating_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="TrainingRating_HRIndividualTargetsHeaderFormat">
+          <DataField>TrainingRating_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="ServiceRating_HRIndividualTargetsHeader">
+          <DataField>ServiceRating_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="ServiceRating_HRIndividualTargetsHeaderFormat">
+          <DataField>ServiceRating_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="OverallRating_HRIndividualTargetsHeader">
+          <DataField>OverallRating_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="OverallRating_HRIndividualTargetsHeaderFormat">
+          <DataField>OverallRating_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="FinancePercScore_HRIndividualTargetsHeader">
+          <DataField>FinancePercScore_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="FinancePercScore_HRIndividualTargetsHeaderFormat">
+          <DataField>FinancePercScore_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="CustomerPercScore_HRIndividualTargetsHeader">
+          <DataField>CustomerPercScore_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="CustomerPercScore_HRIndividualTargetsHeaderFormat">
+          <DataField>CustomerPercScore_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="TrainingPercScore_HRIndividualTargetsHeader">
+          <DataField>TrainingPercScore_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="TrainingPercScore_HRIndividualTargetsHeaderFormat">
+          <DataField>TrainingPercScore_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="ServicePercScore_HRIndividualTargetsHeader">
+          <DataField>ServicePercScore_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="ServicePercScore_HRIndividualTargetsHeaderFormat">
+          <DataField>ServicePercScore_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="OverallPercScore_HRIndividualTargetsHeader">
+          <DataField>OverallPercScore_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="OverallPercScore_HRIndividualTargetsHeaderFormat">
+          <DataField>OverallPercScore_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="Finance_HRIndividualTargetsHeader">
+          <DataField>Finance_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="Customer_HRIndividualTargetsHeader">
+          <DataField>Customer_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="Training_HRIndividualTargetsHeader">
+          <DataField>Training_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="Service_HRIndividualTargetsHeader">
+          <DataField>Service_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="UserID_HRIndividualTargetsHeader">
+          <DataField>UserID_HRIndividualTargetsHeader</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

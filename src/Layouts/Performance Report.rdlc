@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="CI_NameCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CI_NameCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CI_NameCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="ReportForNavId_1">
+          <DataField>ReportForNavId_1</DataField>
+        </Field>
+        <Field Name="FinanceRating_HRIndividualTargetsHeader">
+          <DataField>FinanceRating_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="FinanceRating_HRIndividualTargetsHeaderFormat">
+          <DataField>FinanceRating_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="ClientMemberRating_HRIndividualTargetsHeader">
+          <DataField>ClientMemberRating_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="ClientMemberRating_HRIndividualTargetsHeaderFormat">
+          <DataField>ClientMemberRating_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="LearningRating_HRIndividualTargetsHeader">
+          <DataField>LearningRating_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="LearningRating_HRIndividualTargetsHeaderFormat">
+          <DataField>LearningRating_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="OperationalRating_HRIndividualTargetsHeader">
+          <DataField>OperationalRating_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="OperationalRating_HRIndividualTargetsHeaderFormat">
+          <DataField>OperationalRating_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="OverallRating_HRIndividualTargetsHeader">
+          <DataField>OverallRating_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="OverallRating_HRIndividualTargetsHeaderFormat">
+          <DataField>OverallRating_HRIndividualTargetsHeaderFormat</DataField>
+        </Field>
+        <Field Name="AppraisalNo_HRIndividualTargetsHeader">
+          <DataField>AppraisalNo_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="AppraisalDate_HRIndividualTargetsHeader">
+          <DataField>AppraisalDate_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="EmployeeNo_HRIndividualTargetsHeader">
+          <DataField>EmployeeNo_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="EmployeeName_HRIndividualTargetsHeader">
+          <DataField>EmployeeName_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="AppraisalStage_HRIndividualTargetsHeader">
+          <DataField>AppraisalStage_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="AppraisalType_HRIndividualTargetsHeader">
+          <DataField>AppraisalType_HRIndividualTargetsHeader</DataField>
+        </Field>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENO">
+          <DataField>CurrReport_PAGENO</DataField>
+        </Field>
+        <Field Name="HR_Jobs_UserID">
+          <DataField>HR_Jobs_UserID</DataField>
+        </Field>
+        <Field Name="CI_Picture">
+          <DataField>CI_Picture</DataField>
+        </Field>
+        <Field Name="CI_Address">
+          <DataField>CI_Address</DataField>
+        </Field>
+        <Field Name="CI__Address_2______CI__Post_Code_">
+          <DataField>CI__Address_2______CI__Post_Code_</DataField>
+        </Field>
+        <Field Name="CI_City">
+          <DataField>CI_City</DataField>
+        </Field>
+        <Field Name="CI_PhoneNo">
+          <DataField>CI_PhoneNo</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="P_O__BoxCaption">
+          <DataField>P_O__BoxCaption</DataField>
+        </Field>
+        <Field Name="CI_Name">
+          <DataField>CI_Name</DataField>
+        </Field>
+        <Field Name="CI_Address2">
+          <DataField>CI_Address2</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

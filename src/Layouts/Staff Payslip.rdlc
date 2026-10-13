@@ -1,0 +1,2198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>22ddd772-b9fe-4745-8095-9de173b790d2</rd:ReportID>
+  <am:AuthoringMetadata>
+    <am:CreatedBy>
+      <am:Name>MSRB</am:Name>
+      <am:Version>15.1.30001.02</am:Version>
+    </am:CreatedBy>
+    <am:UpdatedBy>
+      <am:Name>MSRB</am:Name>
+      <am:Version>15.1.30001.02</am:Version>
+    </am:UpdatedBy>
+    <am:LastModifiedTimestamp>2026-08-10T07:51:07.7754469Z</am:LastModifiedTimestamp>
+  </am:AuthoringMetadata>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <rd:SecurityType>None</rd:SecurityType>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:DataSourceID>69fd92ca-eec5-4684-919e-e9f9328ea2b0</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="NssfAmountBox">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!NssfAmount.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>16.21461cm</Top>
+            <Left>15cm</Left>
+            <Height>0.45cm</Height>
+            <Width>3cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <Format>#,##0.00</Format>
+            </Style>
+          </Textbox>
+          <Textbox Name="ShifLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>S.H.I.F</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>16.73461cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="ShifAmountBox">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!ShifAmount.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>16.73461cm</Top>
+            <Left>15cm</Left>
+            <Height>0.45cm</Height>
+            <Width>3cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <Format>#,##0.00</Format>
+            </Style>
+          </Textbox>
+          <Textbox Name="PayeLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>P.A.Y.E</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>17.25461cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="PayeAmountBox">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!PayeAmount.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>17.25461cm</Top>
+            <Left>15cm</Left>
+            <Height>0.45cm</Height>
+            <Width>3cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <Format>#,##0.00</Format>
+            </Style>
+          </Textbox>
+          <Textbox Name="HousingLevyLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Housing Levy</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>17.77461cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="HousingLevyAmountBox">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!HousingLevyAmount.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>17.77461cm</Top>
+            <Left>15cm</Left>
+            <Height>0.45cm</Height>
+            <Width>3cm</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <Format>#,##0.00</Format>
+            </Style>
+          </Textbox>
+          <Textbox Name="OtherDedSection">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>OTHER DEDUCTIONS</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>18.72933cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Tablix Name="OtherDeductionsTablix">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>13.4cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.1cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.45cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="OtherDeductionNameBox">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!DeductionDisplayName.Value</Value>
+                                  <Style>
+                                    <FontFamily>Maiandra GD</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="OtherDeductionBalanceBox">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Fields!DeductionBalance.Value = 0, Nothing, Fields!DeductionBalance.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Maiandra GD</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>n2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <Format>#,##0.00</Format>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="OtherDeductionAmountBox">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!DeductionAmount.Value</Value>
+                                  <Style>
+                                    <FontFamily>Maiandra GD</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>n2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <Format>#,##0.00</Format>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                </TablixMember>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="OtherDeductionsDetailGroup" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Len(Trim(CStr(Fields!DeductionDisplayName.Value)))</FilterExpression>
+                <Operator>GreaterThan</Operator>
+                <FilterValues>
+                  <FilterValue>=0</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
+            <Top>19.24933cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>16.5cm</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="NssfLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>N.S.S.F</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>16.21461cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>9</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="TotalDedLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>TOTAL DEDUCTION</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>20.28933cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="Separator5">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>20.86933cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.05cm</Height>
+            <Width>16.5cm</Width>
+            <ZIndex>11</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BottomBorder>
+                <Style>Solid</Style>
+              </BottomBorder>
+            </Style>
+          </Textbox>
+          <Textbox Name="NetSection">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>NET PAY</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>21.20933cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>12</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="NetPayLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Net Pay</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>21.72933cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>13</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="NetPayAmountBox">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!NetPayAmount.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>21.72933cm</Top>
+            <Left>15cm</Left>
+            <Height>0.45cm</Height>
+            <Width>3cm</Width>
+            <ZIndex>14</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <Format>#,##0.00</Format>
+            </Style>
+          </Textbox>
+          <Textbox Name="Separator6">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>22.30933cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.05cm</Height>
+            <Width>16.5cm</Width>
+            <ZIndex>15</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BottomBorder>
+                <Style>Solid</Style>
+              </BottomBorder>
+            </Style>
+          </Textbox>
+          <Textbox Name="StaffInfoLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Staff Information:</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>23.38572cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>6cm</Width>
+            <ZIndex>16</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="StaffNssfLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>N.S.S.F No:</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>23.90572cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>6cm</Width>
+            <ZIndex>17</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="StaffNssfValue">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!NSSFNo_Employee.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>23.90572cm</Top>
+            <Left>10.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>7cm</Width>
+            <ZIndex>18</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="StaffNhifLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>N.H.I.F No:</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>24.42572cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>6cm</Width>
+            <ZIndex>19</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="StaffNhifValue">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!NHIFNo_Employee.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>24.42572cm</Top>
+            <Left>10.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>7cm</Width>
+            <ZIndex>20</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="StaffPinLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>PIN No:</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>24.94572cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>6cm</Width>
+            <ZIndex>21</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="StaffPinValue">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!PIN_Employee.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>24.94572cm</Top>
+            <Left>10.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>7cm</Width>
+            <ZIndex>22</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="JobTitleLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Days to Retirement:</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>25.46572cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>6cm</Width>
+            <ZIndex>23</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="JobTitleValue">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!DaysToRetirement.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>25.46572cm</Top>
+            <Left>10.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>7cm</Width>
+            <ZIndex>24</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="TotalDedAmountBox">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!TotalDeductionsAmount.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>20.3135cm</Top>
+            <Left>15cm</Left>
+            <Height>0.45cm</Height>
+            <Width>3cm</Width>
+            <ZIndex>25</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <Format>#,##0.00</Format>
+            </Style>
+          </Textbox>
+          <Textbox Name="StatutorySection">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>STATUTORY DEDUCTION</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>15.69461cm</Top>
+            <Left>1.5cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>26</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="PersonalReliefAmountBox">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!PersonalReliefAmount.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>13.78405cm</Top>
+            <Left>14.9cm</Left>
+            <Height>0.45cm</Height>
+            <Width>3cm</Width>
+            <ZIndex>27</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <Format>#,##0.00</Format>
+            </Style>
+          </Textbox>
+          <Textbox Name="Separator1">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>3.99405cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.05cm</Height>
+            <Width>16.5cm</Width>
+            <ZIndex>28</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BottomBorder>
+                <Style>Solid</Style>
+              </BottomBorder>
+            </Style>
+          </Textbox>
+          <Textbox Name="EmployeeLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Employee:</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>4.34405cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>4cm</Width>
+            <ZIndex>29</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="EmployeeValue">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!No_Employee.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>4.34405cm</Top>
+            <Left>10.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>7.4cm</Width>
+            <ZIndex>30</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="EmployeeNameLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Employee Name:</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>4.89405cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>4cm</Width>
+            <ZIndex>31</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="EmployeeNameValue">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!EmployeeName.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>4.89405cm</Top>
+            <Left>10.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>7.4cm</Width>
+            <ZIndex>32</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="PeriodLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Payroll Period:</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>5.44405cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>4cm</Width>
+            <ZIndex>33</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="PeriodValue">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Fields!PayrollPeriodDisplay.Value</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>5.44405cm</Top>
+            <Left>10.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>7.4cm</Width>
+            <ZIndex>34</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="PinTopLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>P.I.N No:</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>5.99405cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>4cm</Width>
+            <ZIndex>35</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="PinTopValue">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!PIN_Employee.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>5.99405cm</Top>
+            <Left>10.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>7.4cm</Width>
+            <ZIndex>36</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="Separator2">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>6.69405cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.05cm</Height>
+            <Width>16.5cm</Width>
+            <ZIndex>37</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BottomBorder>
+                <Style>Solid</Style>
+              </BottomBorder>
+            </Style>
+          </Textbox>
+          <Textbox Name="AmountHeader">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>AMOUNT</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>7.04405cm</Top>
+            <Left>14.9cm</Left>
+            <Height>0.45cm</Height>
+            <Width>3cm</Width>
+            <ZIndex>38</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="BasicSection">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>BASIC SALARY</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>7.69405cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>39</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="Separator4">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>15.35888cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.05cm</Height>
+            <Width>16.5cm</Width>
+            <ZIndex>40</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BottomBorder>
+                <Style>Solid</Style>
+              </BottomBorder>
+            </Style>
+          </Textbox>
+          <Textbox Name="BasicPayLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Basic Pay</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>8.21405cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>41</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="GrossSection">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>GROSS PAY</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>10.08405cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>42</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="GrossPayLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Gross Pay</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>10.60405cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>43</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="GrossPayAmountBox">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!GrossPayAmount.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>10.60405cm</Top>
+            <Left>14.9cm</Left>
+            <Height>0.45cm</Height>
+            <Width>3cm</Width>
+            <ZIndex>44</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <Format>#,##0.00</Format>
+            </Style>
+          </Textbox>
+          <Textbox Name="Separator3">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>11.24405cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.05cm</Height>
+            <Width>16.5cm</Width>
+            <ZIndex>45</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BottomBorder>
+                <Style>Solid</Style>
+              </BottomBorder>
+            </Style>
+          </Textbox>
+          <Textbox Name="TaxSection">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>TAX CALCULATIONS</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>11.62405cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>46</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="DefinedContribLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Less Defined Contributions (NSSF+HLevy+SHIF+Pension)</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>12.14405cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.65cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>47</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="DefinedContribAmountBox">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!DefinedContributionsAmount.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>12.14405cm</Top>
+            <Left>14.9cm</Left>
+            <Height>0.45cm</Height>
+            <Width>3cm</Width>
+            <ZIndex>48</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <Format>#,##0.00</Format>
+            </Style>
+          </Textbox>
+          <Textbox Name="TaxablePayLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Taxable Pay</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>12.74405cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>49</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="TaxablePayAmountBox">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!TaxablePayAmount.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>12.74405cm</Top>
+            <Left>14.9cm</Left>
+            <Height>0.45cm</Height>
+            <Width>3cm</Width>
+            <ZIndex>50</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <Format>#,##0.00</Format>
+            </Style>
+          </Textbox>
+          <Textbox Name="TaxChargedLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Tax Charged</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>13.26405cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>51</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="TaxChargedAmountBox">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!TaxChargedAmount.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>13.26405cm</Top>
+            <Left>14.9cm</Left>
+            <Height>0.45cm</Height>
+            <Width>3cm</Width>
+            <ZIndex>52</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <Format>#,##0.00</Format>
+            </Style>
+          </Textbox>
+          <Textbox Name="PersonalReliefLabel">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Personal Relief</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>13.78405cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>53</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="BasicPayAmountBox">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!BasicPayAmount.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>8.21405cm</Top>
+            <Left>14.9cm</Left>
+            <Height>0.45cm</Height>
+            <Width>3cm</Width>
+            <ZIndex>54</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <Format>#,##0.00</Format>
+            </Style>
+          </Textbox>
+          <Textbox Name="HousingLevyLabel2">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Owner Occupier Interest(Mortgage)</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>14.27921cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>55</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="HousingLevyAmountBox2">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!OwnerOccupierAmount.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>14.29505cm</Top>
+            <Left>14.9cm</Left>
+            <Height>0.45cm</Height>
+            <Width>3cm</Width>
+            <ZIndex>56</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <Format>#,##0.00</Format>
+            </Style>
+          </Textbox>
+          <Textbox Name="HousingLevyLabel3">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Insurance Relief</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>14.76449cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>57</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="HousingLevyAmountBox3">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Fields!InsuranceRelief.Value</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>14.78033cm</Top>
+            <Left>14.9cm</Left>
+            <Height>0.45cm</Height>
+            <Width>3cm</Width>
+            <ZIndex>58</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <Format>#,##0.00</Format>
+            </Style>
+          </Textbox>
+          <Textbox Name="OtherDedSection2">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>EARNINGS</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>8.84044cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>10.5cm</Width>
+            <ZIndex>59</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Tablix Name="EarningsTablix2">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>13.4cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.1cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.45cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="OtherDeductionNameBox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!EarningDisplayName.Value</Value>
+                                  <Style>
+                                    <FontFamily>Maiandra GD</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="OtherDeductionBalanceBox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Fields!DeductionBalance.Value = 0, Nothing, Fields!DeductionBalance.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Maiandra GD</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>n2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <Format>#,##0.00</Format>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="OtherDeductionAmountBox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!EarningAmount.Value</Value>
+                                  <Style>
+                                    <FontFamily>Maiandra GD</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>n2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <Format>#,##0.00</Format>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                </TablixMember>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="OtherDeductionsDetailGroup2" />
+                  <Visibility>
+                    <Hidden>=IsNothing(Fields!EarningAmount.Value) OrElse Fields!EarningAmount.Value &lt;= 0</Hidden>
+                  </Visibility>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Top>9.36044cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.45cm</Height>
+            <Width>16.5cm</Width>
+            <ZIndex>60</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="CompanyAddressTextbox2">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Job Title:</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Fields!JobTitle.Value</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>3.31766cm</Top>
+            <Left>1.4cm</Left>
+            <Height>0.5cm</Height>
+            <Width>16.5cm</Width>
+            <ZIndex>61</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Image Name="CompanyLogo">
+            <Source>Database</Source>
+            <Value>=First(Fields!CompanyInfoPic.Value, "DataSet_Result")</Value>
+            <MIMEType>image/jpeg</MIMEType>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.40217cm</Top>
+            <Left>1.4cm</Left>
+            <Height>2.79188cm</Height>
+            <Width>16.5cm</Width>
+            <ZIndex>62</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>9pt</PaddingLeft>
+            </Style>
+          </Image>
+        </ReportItems>
+        <Height>25.91572cm</Height>
+        <Style />
+      </Body>
+      <Width>18cm</Width>
+      <Page>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>1cm</LeftMargin>
+        <RightMargin>1cm</RightMargin>
+        <TopMargin>1cm</TopMargin>
+        <BottomMargin>3cm</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyInfoPic">
+          <DataField>CompanyInfoPic</DataField>
+        </Field>
+        <Field Name="CompanyAddressLine">
+          <DataField>CompanyAddressLine</DataField>
+        </Field>
+        <Field Name="No_Employee">
+          <DataField>No_Employee</DataField>
+        </Field>
+        <Field Name="EmployeeName">
+          <DataField>EmployeeName</DataField>
+        </Field>
+        <Field Name="PayrollPeriodDisplay">
+          <DataField>PayrollPeriodDisplay</DataField>
+        </Field>
+        <Field Name="PIN_Employee">
+          <DataField>PIN_Employee</DataField>
+        </Field>
+        <Field Name="NSSFNo_Employee">
+          <DataField>NSSFNo_Employee</DataField>
+        </Field>
+        <Field Name="NHIFNo_Employee">
+          <DataField>NHIFNo_Employee</DataField>
+        </Field>
+        <Field Name="JobTitle">
+          <DataField>JobTitle</DataField>
+        </Field>
+        <Field Name="LeaveBal">
+          <DataField>LeaveBal</DataField>
+        </Field>
+        <Field Name="LeaveBalFormat">
+          <DataField>LeaveBalFormat</DataField>
+        </Field>
+        <Field Name="DaysToRetirement">
+          <DataField>DaysToRetirement</DataField>
+        </Field>
+        <Field Name="BasicPayAmount">
+          <DataField>BasicPayAmount</DataField>
+        </Field>
+        <Field Name="BasicPayAmountFormat">
+          <DataField>BasicPayAmountFormat</DataField>
+        </Field>
+        <Field Name="OtherEarningsAmount">
+          <DataField>OtherEarningsAmount</DataField>
+        </Field>
+        <Field Name="OtherEarningsAmountFormat">
+          <DataField>OtherEarningsAmountFormat</DataField>
+        </Field>
+        <Field Name="GrossPayAmount">
+          <DataField>GrossPayAmount</DataField>
+        </Field>
+        <Field Name="GrossPayAmountFormat">
+          <DataField>GrossPayAmountFormat</DataField>
+        </Field>
+        <Field Name="DefinedContributionsAmount">
+          <DataField>DefinedContributionsAmount</DataField>
+        </Field>
+        <Field Name="DefinedContributionsAmountFormat">
+          <DataField>DefinedContributionsAmountFormat</DataField>
+        </Field>
+        <Field Name="TaxablePayAmount">
+          <DataField>TaxablePayAmount</DataField>
+        </Field>
+        <Field Name="TaxablePayAmountFormat">
+          <DataField>TaxablePayAmountFormat</DataField>
+        </Field>
+        <Field Name="TaxChargedAmount">
+          <DataField>TaxChargedAmount</DataField>
+        </Field>
+        <Field Name="TaxChargedAmountFormat">
+          <DataField>TaxChargedAmountFormat</DataField>
+        </Field>
+        <Field Name="PersonalReliefAmount">
+          <DataField>PersonalReliefAmount</DataField>
+        </Field>
+        <Field Name="PersonalReliefAmountFormat">
+          <DataField>PersonalReliefAmountFormat</DataField>
+        </Field>
+        <Field Name="NssfAmount">
+          <DataField>NssfAmount</DataField>
+        </Field>
+        <Field Name="NssfAmountFormat">
+          <DataField>NssfAmountFormat</DataField>
+        </Field>
+        <Field Name="ShifAmount">
+          <DataField>ShifAmount</DataField>
+        </Field>
+        <Field Name="ShifAmountFormat">
+          <DataField>ShifAmountFormat</DataField>
+        </Field>
+        <Field Name="PayeAmount">
+          <DataField>PayeAmount</DataField>
+        </Field>
+        <Field Name="PayeAmountFormat">
+          <DataField>PayeAmountFormat</DataField>
+        </Field>
+        <Field Name="HousingLevyAmount">
+          <DataField>HousingLevyAmount</DataField>
+        </Field>
+        <Field Name="HousingLevyAmountFormat">
+          <DataField>HousingLevyAmountFormat</DataField>
+        </Field>
+        <Field Name="OwnerOccupierAmount">
+          <DataField>OwnerOccupierAmount</DataField>
+        </Field>
+        <Field Name="OwnerOccupierAmountFormat">
+          <DataField>OwnerOccupierAmountFormat</DataField>
+        </Field>
+        <Field Name="InsuranceRelief">
+          <DataField>InsuranceRelief</DataField>
+        </Field>
+        <Field Name="InsuranceReliefFormat">
+          <DataField>InsuranceReliefFormat</DataField>
+        </Field>
+        <Field Name="PensionContributionAmount">
+          <DataField>PensionContributionAmount</DataField>
+        </Field>
+        <Field Name="PensionContributionAmountFormat">
+          <DataField>PensionContributionAmountFormat</DataField>
+        </Field>
+        <Field Name="PensionContributionBalance">
+          <DataField>PensionContributionBalance</DataField>
+        </Field>
+        <Field Name="PensionContributionBalanceFormat">
+          <DataField>PensionContributionBalanceFormat</DataField>
+        </Field>
+        <Field Name="SaccoDeductionsAmount">
+          <DataField>SaccoDeductionsAmount</DataField>
+        </Field>
+        <Field Name="SaccoDeductionsAmountFormat">
+          <DataField>SaccoDeductionsAmountFormat</DataField>
+        </Field>
+        <Field Name="SaccoDeductionsBalance">
+          <DataField>SaccoDeductionsBalance</DataField>
+        </Field>
+        <Field Name="SaccoDeductionsBalanceFormat">
+          <DataField>SaccoDeductionsBalanceFormat</DataField>
+        </Field>
+        <Field Name="SaccoWelfareAmount">
+          <DataField>SaccoWelfareAmount</DataField>
+        </Field>
+        <Field Name="SaccoWelfareAmountFormat">
+          <DataField>SaccoWelfareAmountFormat</DataField>
+        </Field>
+        <Field Name="SaccoWelfareBalance">
+          <DataField>SaccoWelfareBalance</DataField>
+        </Field>
+        <Field Name="SaccoWelfareBalanceFormat">
+          <DataField>SaccoWelfareBalanceFormat</DataField>
+        </Field>
+        <Field Name="TotalDeductionsAmount">
+          <DataField>TotalDeductionsAmount</DataField>
+        </Field>
+        <Field Name="TotalDeductionsAmountFormat">
+          <DataField>TotalDeductionsAmountFormat</DataField>
+        </Field>
+        <Field Name="NetPayAmount">
+          <DataField>NetPayAmount</DataField>
+        </Field>
+        <Field Name="NetPayAmountFormat">
+          <DataField>NetPayAmountFormat</DataField>
+        </Field>
+        <Field Name="EarningDisplayName">
+          <DataField>EarningDisplayName</DataField>
+        </Field>
+        <Field Name="EarningAmount">
+          <DataField>EarningAmount</DataField>
+        </Field>
+        <Field Name="EarningAmountFormat">
+          <DataField>EarningAmountFormat</DataField>
+        </Field>
+        <Field Name="EarningBalance">
+          <DataField>EarningBalance</DataField>
+        </Field>
+        <Field Name="EarningBalanceFormat">
+          <DataField>EarningBalanceFormat</DataField>
+        </Field>
+        <Field Name="DeductionDisplayName">
+          <DataField>DeductionDisplayName</DataField>
+        </Field>
+        <Field Name="DeductionAmount">
+          <DataField>DeductionAmount</DataField>
+        </Field>
+        <Field Name="DeductionAmountFormat">
+          <DataField>DeductionAmountFormat</DataField>
+        </Field>
+        <Field Name="DeductionBalance">
+          <DataField>DeductionBalance</DataField>
+        </Field>
+        <Field Name="DeductionBalanceFormat">
+          <DataField>DeductionBalanceFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

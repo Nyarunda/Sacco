@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="ReportForNavId_1">
+          <DataField>ReportForNavId_1</DataField>
+        </Field>
+        <Field Name="IncidentNo_OSIncident">
+          <DataField>IncidentNo_OSIncident</DataField>
+        </Field>
+        <Field Name="IncidentDesc_OSIncident">
+          <DataField>IncidentDesc_OSIncident</DataField>
+        </Field>
+        <Field Name="Address_OSIncident">
+          <DataField>Address_OSIncident</DataField>
+        </Field>
+        <Field Name="DateofBirth_OSIncident">
+          <DataField>DateofBirth_OSIncident</DataField>
+        </Field>
+        <Field Name="JobTitle_OSIncident">
+          <DataField>JobTitle_OSIncident</DataField>
+        </Field>
+        <Field Name="HomePhoneNo_OSIncident">
+          <DataField>HomePhoneNo_OSIncident</DataField>
+        </Field>
+        <Field Name="Section_OSIncident">
+          <DataField>Section_OSIncident</DataField>
+        </Field>
+        <Field Name="TypeofIncident_OSIncident">
+          <DataField>TypeofIncident_OSIncident</DataField>
+        </Field>
+        <Field Name="LocationCode_OSIncident">
+          <DataField>LocationCode_OSIncident</DataField>
+        </Field>
+        <Field Name="PartofBodyAffected_OSIncident">
+          <DataField>PartofBodyAffected_OSIncident</DataField>
+        </Field>
+        <Field Name="DateofIncident_OSIncident">
+          <DataField>DateofIncident_OSIncident</DataField>
+        </Field>
+        <Field Name="Time_OSIncident">
+          <DataField>Time_OSIncident</DataField>
+        </Field>
+        <Field Name="DateNotificationReceived_OSIncident">
+          <DataField>DateNotificationReceived_OSIncident</DataField>
+        </Field>
+        <Field Name="FirstWitnessName_OSIncident">
+          <DataField>FirstWitnessName_OSIncident</DataField>
+        </Field>
+        <Field Name="FirstWitnessAddress_OSIncident">
+          <DataField>FirstWitnessAddress_OSIncident</DataField>
+        </Field>
+        <Field Name="SecondWitnessName_OSIncident">
+          <DataField>SecondWitnessName_OSIncident</DataField>
+        </Field>
+        <Field Name="SecondWitnessAddress_OSIncident">
+          <DataField>SecondWitnessAddress_OSIncident</DataField>
+        </Field>
+        <Field Name="FirstAidGiven_OSIncident">
+          <DataField>FirstAidGiven_OSIncident</DataField>
+        </Field>
+        <Field Name="TakenHome_OSIncident">
+          <DataField>TakenHome_OSIncident</DataField>
+        </Field>
+        <Field Name="ReturntoWorkonsameday_OSIncident">
+          <DataField>ReturntoWorkonsameday_OSIncident</DataField>
+        </Field>
+        <Field Name="WentAbsent_OSIncident">
+          <DataField>WentAbsent_OSIncident</DataField>
+        </Field>
+        <Field Name="TakentoHospital_OSIncident">
+          <DataField>TakentoHospital_OSIncident</DataField>
+        </Field>
+        <Field Name="Admitted_OSIncident">
+          <DataField>Admitted_OSIncident</DataField>
+        </Field>
+        <Field Name="NoSeries_OSIncident">
+          <DataField>NoSeries_OSIncident</DataField>
+        </Field>
+        <Field Name="EmployeeNo_OSIncident">
+          <DataField>EmployeeNo_OSIncident</DataField>
+        </Field>
+        <Field Name="ReportForNavId_27">
+          <DataField>ReportForNavId_27</DataField>
+        </Field>
+        <Field Name="EmployeeNo_OSInjuredPerson">
+          <DataField>EmployeeNo_OSInjuredPerson</DataField>
+        </Field>
+        <Field Name="InjuredPerson_OSInjuredPerson">
+          <DataField>InjuredPerson_OSInjuredPerson</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="MpesaDeposit">
+          <DataField>MpesaDeposit</DataField>
+        </Field>
+        <Field Name="MpesaDepositFormat">
+          <DataField>MpesaDepositFormat</DataField>
+        </Field>
+        <Field Name="IssueFromTreasury">
+          <DataField>IssueFromTreasury</DataField>
+        </Field>
+        <Field Name="IssueFromTreasuryFormat">
+          <DataField>IssueFromTreasuryFormat</DataField>
+        </Field>
+        <Field Name="CreditMemberCredits">
+          <DataField>CreditMemberCredits</DataField>
+        </Field>
+        <Field Name="CreditMemberCreditsFormat">
+          <DataField>CreditMemberCreditsFormat</DataField>
+        </Field>
+        <Field Name="CreditMemberDebits">
+          <DataField>CreditMemberDebits</DataField>
+        </Field>
+        <Field Name="CreditMemberDebitsFormat">
+          <DataField>CreditMemberDebitsFormat</DataField>
+        </Field>
+        <Field Name="CustomerLedgerCredits">
+          <DataField>CustomerLedgerCredits</DataField>
+        </Field>
+        <Field Name="CustomerLedgerCreditsFormat">
+          <DataField>CustomerLedgerCreditsFormat</DataField>
+        </Field>
+        <Field Name="CustomerLedgerDebits">
+          <DataField>CustomerLedgerDebits</DataField>
+        </Field>
+        <Field Name="CustomerLedgerDebitsFormat">
+          <DataField>CustomerLedgerDebitsFormat</DataField>
+        </Field>
+        <Field Name="MpesaWithdrawal">
+          <DataField>MpesaWithdrawal</DataField>
+        </Field>
+        <Field Name="MpesaWithdrawalFormat">
+          <DataField>MpesaWithdrawalFormat</DataField>
+        </Field>
+        <Field Name="ReturnToTreasury">
+          <DataField>ReturnToTreasury</DataField>
+        </Field>
+        <Field Name="ReturnToTreasuryFormat">
+          <DataField>ReturnToTreasuryFormat</DataField>
+        </Field>
+        <Field Name="OtherPayments">
+          <DataField>OtherPayments</DataField>
+        </Field>
+        <Field Name="OtherPaymentsFormat">
+          <DataField>OtherPaymentsFormat</DataField>
+        </Field>
+        <Field Name="ChequeDeposits">
+          <DataField>ChequeDeposits</DataField>
+        </Field>
+        <Field Name="ChequeDepositsFormat">
+          <DataField>ChequeDepositsFormat</DataField>
+        </Field>
+        <Field Name="Receipts">
+          <DataField>Receipts</DataField>
+        </Field>
+        <Field Name="ReceiptsFormat">
+          <DataField>ReceiptsFormat</DataField>
+        </Field>
+        <Field Name="Payments">
+          <DataField>Payments</DataField>
+        </Field>
+        <Field Name="PaymentsFormat">
+          <DataField>PaymentsFormat</DataField>
+        </Field>
+        <Field Name="CName">
+          <DataField>CName</DataField>
+        </Field>
+        <Field Name="CPicture">
+          <DataField>CPicture</DataField>
+        </Field>
+        <Field Name="Deposit">
+          <DataField>Deposit</DataField>
+        </Field>
+        <Field Name="FromTreasury">
+          <DataField>FromTreasury</DataField>
+        </Field>
+        <Field Name="LoanRepayment">
+          <DataField>LoanRepayment</DataField>
+        </Field>
+        <Field Name="ChequeDeposit">
+          <DataField>ChequeDeposit</DataField>
+        </Field>
+        <Field Name="Withdrawal">
+          <DataField>Withdrawal</DataField>
+        </Field>
+        <Field Name="TellerTre">
+          <DataField>TellerTre</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

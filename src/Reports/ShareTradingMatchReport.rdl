@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="FilterString">
+          <DataField>FilterString</DataField>
+        </Field>
+        <Field Name="PrintDateTime">
+          <DataField>PrintDateTime</DataField>
+        </Field>
+        <Field Name="UserID">
+          <DataField>UserID</DataField>
+        </Field>
+        <Field Name="MatchID">
+          <DataField>MatchID</DataField>
+        </Field>
+        <Field Name="MatchDate">
+          <DataField>MatchDate</DataField>
+        </Field>
+        <Field Name="MatchTime">
+          <DataField>MatchTime</DataField>
+        </Field>
+        <Field Name="SellOrderID">
+          <DataField>SellOrderID</DataField>
+        </Field>
+        <Field Name="SellerMemberNo">
+          <DataField>SellerMemberNo</DataField>
+        </Field>
+        <Field Name="SellerMemberName">
+          <DataField>SellerMemberName</DataField>
+        </Field>
+        <Field Name="BuyOrderID">
+          <DataField>BuyOrderID</DataField>
+        </Field>
+        <Field Name="BuyerMemberNo">
+          <DataField>BuyerMemberNo</DataField>
+        </Field>
+        <Field Name="BuyerMemberName">
+          <DataField>BuyerMemberName</DataField>
+        </Field>
+        <Field Name="MatchedShares">
+          <DataField>MatchedShares</DataField>
+        </Field>
+        <Field Name="MatchedSharesFormat">
+          <DataField>MatchedSharesFormat</DataField>
+        </Field>
+        <Field Name="MatchPrice">
+          <DataField>MatchPrice</DataField>
+        </Field>
+        <Field Name="MatchPriceFormat">
+          <DataField>MatchPriceFormat</DataField>
+        </Field>
+        <Field Name="MatchAmount">
+          <DataField>MatchAmount</DataField>
+        </Field>
+        <Field Name="MatchAmountFormat">
+          <DataField>MatchAmountFormat</DataField>
+        </Field>
+        <Field Name="Posted">
+          <DataField>Posted</DataField>
+        </Field>
+        <Field Name="PostedDate">
+          <DataField>PostedDate</DataField>
+        </Field>
+        <Field Name="PostedBy">
+          <DataField>PostedBy</DataField>
+        </Field>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+        </Field>
+        <Field Name="SellOrderDate">
+          <DataField>SellOrderDate</DataField>
+        </Field>
+        <Field Name="SellOrderTime">
+          <DataField>SellOrderTime</DataField>
+        </Field>
+        <Field Name="SellOrderPrice">
+          <DataField>SellOrderPrice</DataField>
+        </Field>
+        <Field Name="SellOrderPriceFormat">
+          <DataField>SellOrderPriceFormat</DataField>
+        </Field>
+        <Field Name="BuyOrderDate">
+          <DataField>BuyOrderDate</DataField>
+        </Field>
+        <Field Name="BuyOrderTime">
+          <DataField>BuyOrderTime</DataField>
+        </Field>
+        <Field Name="BuyOrderPrice">
+          <DataField>BuyOrderPrice</DataField>
+        </Field>
+        <Field Name="BuyOrderPriceFormat">
+          <DataField>BuyOrderPriceFormat</DataField>
+        </Field>
+        <Field Name="CommissionAmount">
+          <DataField>CommissionAmount</DataField>
+        </Field>
+        <Field Name="CommissionAmountFormat">
+          <DataField>CommissionAmountFormat</DataField>
+        </Field>
+        <Field Name="TradingFee">
+          <DataField>TradingFee</DataField>
+        </Field>
+        <Field Name="TradingFeeFormat">
+          <DataField>TradingFeeFormat</DataField>
+        </Field>
+        <Field Name="NetSellerAmount">
+          <DataField>NetSellerAmount</DataField>
+        </Field>
+        <Field Name="NetSellerAmountFormat">
+          <DataField>NetSellerAmountFormat</DataField>
+        </Field>
+        <Field Name="TotalBuyerCost">
+          <DataField>TotalBuyerCost</DataField>
+        </Field>
+        <Field Name="TotalBuyerCostFormat">
+          <DataField>TotalBuyerCostFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

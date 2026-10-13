@@ -1,0 +1,822 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>a306cfc8-f96d-4a64-8fbf-93548538fc21</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Our Ref: ..........................................
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!ApprovalDate_Loans.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!Name_Members.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">,</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto"> </Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!CurrentAddress_Members.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> - </Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!PostCode_Members.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">, 
+	</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!City_Members.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">				
+		
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">Dear Sir/Madam,		</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve" EvaluationMode="Auto">					
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">TERM LOAN FACILITY OF KSHS. </Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!ApprovedAmount_Loans.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <Format>n2</Format>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> /=</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto" />
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">We are pleased to advise that your request for the above captioned facility has been approved by us and further subject to your securities hereunder mentioned proving satisfactory and acceptable to us and subject, also, to your acceptance of and compliance with the following terms and conditions
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">1.	Amount:
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">The maximum amount of the Term Loan shall be Kshs.  </Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!ApprovedAmount_Loans.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">/= (Kenya Shillings </Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!NumberText.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">).
+
+THE ABOVE FACILITY HAS BEEN MADE AVAILABLE TO YOU FOR A MAXIMUM PERIOD OF </Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!Installments_Loans.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> MONTHS BUT WILL BE SUBJECT TO REVIEW FOR CONDUCT.
+
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">2.	Repayment/Tenure:
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">The Term Loan will be repaid within a maximum repayment period of </Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!Installments_Loans.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> months by </Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!Installments_Loans.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> equal monthly installments comprising principal and interest, commencing one month after disbursement, by way of deductions or Standing Order. The quantum of monthly installments will be advised to your good self at the time.
+
+Notwithstanding the provisions above, the Sacco shall be entitled to demand and call for immediate repayment of all or any of the secured liabilities at its sole discretion at any time provided, however, that in the event of your desiring premature liquidation of the loan referred to above, you shall give the Sacco one month’s notice in advance or pay interest in lieu of notice.
+Without prejudice to the above, the Sacco reserves the right to call up the Term Loan at its discretion, making it payable on demand.
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">3.	Interest:
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">	Interest on the Term Loan facility will be charged at the Rate of </Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!Interest_Loans.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">% per annum 
+on monthly </Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!InterestCalculationMethod_Loans.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> basis or on such other basis as may be determined by us from time to time. 
+
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">4.	Security:
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">The facility will be secured jointly and severally by the following securities comprising:
+
+i.	</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!GuarantorTxt.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> [</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!NoOfGuarantors.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">] guarantors. 
+ii.	Non-withdrawable deposits and savings of not less than kes. </Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!NumberTextD.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> (</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!Requireddeposits.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">/- ) held by the Society in your order
+	
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">5.	Other Conditions:
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">i.	The facility will be governed as set forth herein as well as by the provisions contained in the Sacco’s Lending Terms and Conditions including any subsequent amendments and/or modifications thereto and by executing this Letter of Offer, you will be deemed to have read, sought legal advice and understood the contents thereof. 
+
+ii.	The execution and delivery of this Letter of Offer and/or the performance or observance of any of your obligations herein or in the Sacco’s Lending Terms and Conditions contained will not conflict with, or result in, any breach of any law, statute, regulation, indenture, mortgage, trust deed, agreement, or other instrument, arrangement, obligation or duty by which you are bound.
+
+iii.	Disbursement will only be allowed upon receipt by the Sacco of all related security documents duly completed and registered and full compliance by you with the Sacco’s Lending Terms and Conditions particulars of which have been availed to you and which shall for all intents and purposes be deemed to be incorporated herein by extension. 
+
+iv.	In the event you fail to effect draw-down of the facility for any reason whatsoever, whether within your control or not, within Sixty [60] days of the date of acceptance of this Letter of Offer, the same shall automatically lapse. However, this period may be extended with our mutual consent. 
+
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">6.	Acceptance of Offer:
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">The above offer is open for acceptance for a period of ten days from the date of this letter. If the offer is not accepted within the time stipulated it shall be deemed to have been withdrawn. However, this period may be extended with our mutual consent.
+
+Kindly signify your acceptance of the foregoing by signing and returning to us the attached duplicate copy of this letter. 
+
+   Yours faithfully,
+   FOR STIMA SACCO						
+
+
+   M.W. KIEMA							
+   HEAD OF CREDIT 							
+
+
+           Chris Useki					                          James Mutura
+   AG. CHIEF EXECUTIVE OFFICER				    FINANCE MANAGER
+
+
+
+   In the presence of Advocate
+
+
+
+   MEMORANDUM OF ACCEPTANCE
+
+I, </Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!Name_Members.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">	 , HEREBY ACCEPT THE TERMS AND CONDITIONS OF THIS LETTER OF OFFER DATED    </Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=Today()</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <Format>dddd, d MMMM, yyyy</Format>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto"> IN RESPECT OF THE TERM LOAN FACILITY OF KSHS.</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!ApprovedAmount_Loans.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <Format>n2</Format>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">/= AS SET OUT ABOVE.
+
+  SIGNED BY THE SAID:
+	</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">=First(Fields!Name_Members.Value, "DataSet_Result")</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">	     ………………………………..		………………………………    
+						                                     SIGN				                  DATE
+
+I HEREBY CERTIFY THAT THE ABOVE NAMED FREELY AND VOLUNTARILY EXECUTED THIS LETTER OF OFFER AND CONFIRM THAT SHE HAS UNDERSTOOD ITS CONTENTS AND OBTAINED INDEPENDENT LEGAL ADVISE ON THE SAME.
+
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">
+(SIGNATURE AND STAMP OF ADVOCATE CERTIFYING</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value EvaluationMode="Auto">)
+</Value>
+                    <Style>
+                      <FontFamily>Maiandra GD</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Left>0.47854in</Left>
+            <Height>25.37153in</Height>
+            <Width>7.17833in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>25.39584in</Height>
+        <Style />
+      </Body>
+      <Width>7.65687in</Width>
+      <Page>
+        <PageHeader>
+          <Height>0.05208in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>0.70139in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="LoanNo_Loans">
+          <DataField>LoanNo_Loans</DataField>
+        </Field>
+        <Field Name="ApplicationDate_Loans">
+          <DataField>ApplicationDate_Loans</DataField>
+        </Field>
+        <Field Name="MemberNo_Loans">
+          <DataField>MemberNo_Loans</DataField>
+        </Field>
+        <Field Name="RequestedAmount_Loans">
+          <DataField>RequestedAmount_Loans</DataField>
+        </Field>
+        <Field Name="RequestedAmount_LoansFormat">
+          <DataField>RequestedAmount_LoansFormat</DataField>
+        </Field>
+        <Field Name="ApprovedAmount_Loans">
+          <DataField>ApprovedAmount_Loans</DataField>
+        </Field>
+        <Field Name="ApprovedAmount_LoansFormat">
+          <DataField>ApprovedAmount_LoansFormat</DataField>
+        </Field>
+        <Field Name="MemberName_Loans">
+          <DataField>MemberName_Loans</DataField>
+        </Field>
+        <Field Name="ApprovalDate_Loans">
+          <DataField>ApprovalDate_Loans</DataField>
+        </Field>
+        <Field Name="Installments_Loans">
+          <DataField>Installments_Loans</DataField>
+        </Field>
+        <Field Name="DisbursementDate_Loans">
+          <DataField>DisbursementDate_Loans</DataField>
+        </Field>
+        <Field Name="Repayment_Loans">
+          <DataField>Repayment_Loans</DataField>
+        </Field>
+        <Field Name="Repayment_LoansFormat">
+          <DataField>Repayment_LoansFormat</DataField>
+        </Field>
+        <Field Name="LoanProductTypeName_Loans">
+          <DataField>LoanProductTypeName_Loans</DataField>
+        </Field>
+        <Field Name="StaffNo_Loans">
+          <DataField>StaffNo_Loans</DataField>
+        </Field>
+        <Field Name="RecommendedAmount_Loans">
+          <DataField>RecommendedAmount_Loans</DataField>
+        </Field>
+        <Field Name="RecommendedAmount_LoansFormat">
+          <DataField>RecommendedAmount_LoansFormat</DataField>
+        </Field>
+        <Field Name="InterestCalculationMethod_Loans">
+          <DataField>InterestCalculationMethod_Loans</DataField>
+        </Field>
+        <Field Name="Interest_Loans">
+          <DataField>Interest_Loans</DataField>
+        </Field>
+        <Field Name="Interest_LoansFormat">
+          <DataField>Interest_LoansFormat</DataField>
+        </Field>
+        <Field Name="NumberText">
+          <DataField>NumberText</DataField>
+        </Field>
+        <Field Name="NumberTextI">
+          <DataField>NumberTextI</DataField>
+        </Field>
+        <Field Name="NumberTextD">
+          <DataField>NumberTextD</DataField>
+        </Field>
+        <Field Name="Requireddeposits">
+          <DataField>Requireddeposits</DataField>
+        </Field>
+        <Field Name="RequireddepositsFormat">
+          <DataField>RequireddepositsFormat</DataField>
+        </Field>
+        <Field Name="NoOfGuarantors">
+          <DataField>NoOfGuarantors</DataField>
+        </Field>
+        <Field Name="GuarantorTxt">
+          <DataField>GuarantorTxt</DataField>
+        </Field>
+        <Field Name="No_Members">
+          <DataField>No_Members</DataField>
+        </Field>
+        <Field Name="Name_Members">
+          <DataField>Name_Members</DataField>
+        </Field>
+        <Field Name="Name2_Members">
+          <DataField>Name2_Members</DataField>
+        </Field>
+        <Field Name="CurrentAddress_Members">
+          <DataField>CurrentAddress_Members</DataField>
+        </Field>
+        <Field Name="HomeAddress_Members">
+          <DataField>HomeAddress_Members</DataField>
+        </Field>
+        <Field Name="City_Members">
+          <DataField>City_Members</DataField>
+        </Field>
+        <Field Name="Contact_Members">
+          <DataField>Contact_Members</DataField>
+        </Field>
+        <Field Name="PhoneNo_Members">
+          <DataField>PhoneNo_Members</DataField>
+        </Field>
+        <Field Name="GlobalDimension1Code_Members">
+          <DataField>GlobalDimension1Code_Members</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code_Members">
+          <DataField>GlobalDimension2Code_Members</DataField>
+        </Field>
+        <Field Name="PostCode_Members">
+          <DataField>PostCode_Members</DataField>
+        </Field>
+        <Field Name="County_Members">
+          <DataField>County_Members</DataField>
+        </Field>
+        <Field Name="EMail_Members">
+          <DataField>EMail_Members</DataField>
+        </Field>
+        <Field Name="PayrollStaffNo_Members">
+          <DataField>PayrollStaffNo_Members</DataField>
+        </Field>
+        <Field Name="IDNo_Members">
+          <DataField>IDNo_Members</DataField>
+        </Field>
+        <Field Name="MobilePhoneNo_Members">
+          <DataField>MobilePhoneNo_Members</DataField>
+        </Field>
+        <Field Name="Salutation_Members">
+          <DataField>Salutation_Members</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

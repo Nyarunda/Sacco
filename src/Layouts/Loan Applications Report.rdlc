@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="ReportForNavId_1">
+          <DataField>ReportForNavId_1</DataField>
+        </Field>
+        <Field Name="RShipOfficer">
+          <DataField>RShipOfficer</DataField>
+        </Field>
+        <Field Name="TopUpAmount">
+          <DataField>TopUpAmount</DataField>
+        </Field>
+        <Field Name="TopUpAmountFormat">
+          <DataField>TopUpAmountFormat</DataField>
+        </Field>
+        <Field Name="BranchCode">
+          <DataField>BranchCode</DataField>
+        </Field>
+        <Field Name="InterestCalculationMethod_Loans">
+          <DataField>InterestCalculationMethod_Loans</DataField>
+        </Field>
+        <Field Name="DisbursementDate_Loans">
+          <DataField>DisbursementDate_Loans</DataField>
+        </Field>
+        <Field Name="LastPayDate_Loans">
+          <DataField>LastPayDate_Loans</DataField>
+        </Field>
+        <Field Name="ExpectedDateofCompletion_Loans">
+          <DataField>ExpectedDateofCompletion_Loans</DataField>
+        </Field>
+        <Field Name="LoansCategorySASRA_Loans">
+          <DataField>LoansCategorySASRA_Loans</DataField>
+        </Field>
+        <Field Name="LoanNo_Loans">
+          <DataField>LoanNo_Loans</DataField>
+        </Field>
+        <Field Name="ApplicationDate_Loans">
+          <DataField>ApplicationDate_Loans</DataField>
+        </Field>
+        <Field Name="Sector">
+          <DataField>Sector</DataField>
+        </Field>
+        <Field Name="IdNumber">
+          <DataField>IdNumber</DataField>
+        </Field>
+        <Field Name="LoanProductType_Loans">
+          <DataField>LoanProductType_Loans</DataField>
+        </Field>
+        <Field Name="DepositBoosting">
+          <DataField>DepositBoosting</DataField>
+        </Field>
+        <Field Name="DepositBoostingFormat">
+          <DataField>DepositBoostingFormat</DataField>
+        </Field>
+        <Field Name="LoanProductTypeName_Loans">
+          <DataField>LoanProductTypeName_Loans</DataField>
+        </Field>
+        <Field Name="InsurancePercentage">
+          <DataField>InsurancePercentage</DataField>
+        </Field>
+        <Field Name="InsurancePercentageFormat">
+          <DataField>InsurancePercentageFormat</DataField>
+        </Field>
+        <Field Name="LoanStatus">
+          <DataField>LoanStatus</DataField>
+        </Field>
+        <Field Name="AmountDisbursed">
+          <DataField>AmountDisbursed</DataField>
+        </Field>
+        <Field Name="AmountDisbursedFormat">
+          <DataField>AmountDisbursedFormat</DataField>
+        </Field>
+        <Field Name="MemberNo_Loans">
+          <DataField>MemberNo_Loans</DataField>
+        </Field>
+        <Field Name="LoanRegNo">
+          <DataField>LoanRegNo</DataField>
+        </Field>
+        <Field Name="CustomerCID">
+          <DataField>CustomerCID</DataField>
+        </Field>
+        <Field Name="MemberName_Loans">
+          <DataField>MemberName_Loans</DataField>
+        </Field>
+        <Field Name="Installemnt">
+          <DataField>Installemnt</DataField>
+        </Field>
+        <Field Name="Processing">
+          <DataField>Processing</DataField>
+        </Field>
+        <Field Name="ProcessingFormat">
+          <DataField>ProcessingFormat</DataField>
+        </Field>
+        <Field Name="RequestedAmount">
+          <DataField>RequestedAmount</DataField>
+        </Field>
+        <Field Name="RequestedAmountFormat">
+          <DataField>RequestedAmountFormat</DataField>
+        </Field>
+        <Field Name="ApprovedAmount">
+          <DataField>ApprovedAmount</DataField>
+        </Field>
+        <Field Name="ApprovedAmountFormat">
+          <DataField>ApprovedAmountFormat</DataField>
+        </Field>
+        <Field Name="OutBal">
+          <DataField>OutBal</DataField>
+        </Field>
+        <Field Name="OutBalFormat">
+          <DataField>OutBalFormat</DataField>
+        </Field>
+        <Field Name="OutInt">
+          <DataField>OutInt</DataField>
+        </Field>
+        <Field Name="OutIntFormat">
+          <DataField>OutIntFormat</DataField>
+        </Field>
+        <Field Name="TopUpFee">
+          <DataField>TopUpFee</DataField>
+        </Field>
+        <Field Name="TopUpFeeFormat">
+          <DataField>TopUpFeeFormat</DataField>
+        </Field>
+        <Field Name="Picture">
+          <DataField>Picture</DataField>
+        </Field>
+        <Field Name="Address">
+          <DataField>Address</DataField>
+        </Field>
+        <Field Name="Company_Name">
+          <DataField>Company_Name</DataField>
+        </Field>
+        <Field Name="sno">
+          <DataField>sno</DataField>
+        </Field>
+        <Field Name="BridgeAmt">
+          <DataField>BridgeAmt</DataField>
+        </Field>
+        <Field Name="BridgeAmtFormat">
+          <DataField>BridgeAmtFormat</DataField>
+        </Field>
+        <Field Name="TotalLoanBal">
+          <DataField>TotalLoanBal</DataField>
+        </Field>
+        <Field Name="TotalLoanBalFormat">
+          <DataField>TotalLoanBalFormat</DataField>
+        </Field>
+        <Field Name="OutstandingPenalty_Loans">
+          <DataField>OutstandingPenalty_Loans</DataField>
+        </Field>
+        <Field Name="OutstandingPenalty_LoansFormat">
+          <DataField>OutstandingPenalty_LoansFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

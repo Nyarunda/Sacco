@@ -1,0 +1,1039 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="Title">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>FORM 2H</Value>
+                    <Style>
+                      <FontSize>14pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>0in</Top>
+            <Left>0in</Left>
+            <Height>0.3in</Height>
+            <Width>7.5in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="Subtitle">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>STATEMENT OF OTHER DISCLOSURES</Value>
+                    <Style>
+                      <FontSize>11pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>0.3in</Top>
+            <Left>0in</Left>
+            <Height>0.25in</Height>
+            <Width>7.5in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="HeaderInfo">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="Name of Sacco Society: " &amp; First(Fields!SaccoName.Value, "DataSet_Result") &amp; vbCrLf &amp; "Financial Year: " &amp; First(Fields!FinancialYear.Value, "DataSet_Result") &amp; vbCrLf &amp; "Period: " &amp; Format(First(Fields!StartDate.Value, "DataSet_Result"), "dd/MM/yyyy") &amp; " to " &amp; Format(First(Fields!EndDate.Value, "DataSet_Result"), "dd/MM/yyyy")</Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+              </Paragraph>
+            </Paragraphs>
+            <Top>0.6in</Top>
+            <Left>0in</Left>
+            <Height>0.55in</Height>
+            <Width>7.5in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingLeft>4pt</PaddingLeft>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="ColumnRef">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Ref. No.</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>1.2in</Top>
+            <Left>0in</Left>
+            <Height>0.35in</Height>
+            <Width>0.7in</Width>
+            <Style>
+              <BackgroundColor>LightGrey</BackgroundColor>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="ColumnDisclosure">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>OTHER DISCLOSURES</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>1.2in</Top>
+            <Left>0.7in</Left>
+            <Height>0.35in</Height>
+            <Width>4.0in</Width>
+            <Style>
+              <BackgroundColor>LightGrey</BackgroundColor>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="ColumnCurrent">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Current Year
+AMOUNT (KSHS)</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>1.2in</Top>
+            <Left>4.7in</Left>
+            <Height>0.35in</Height>
+            <Width>1.4in</Width>
+            <Style>
+              <BackgroundColor>LightGrey</BackgroundColor>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="ColumnPrior">
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Prior Year
+AMOUNT (KSHS)</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>1.2in</Top>
+            <Left>6.1in</Left>
+            <Height>0.35in</Height>
+            <Width>1.4in</Width>
+            <Style>
+              <BackgroundColor>LightGrey</BackgroundColor>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Textbox Name="NPLRefs">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>1
+1.1
+1.2
+1.3
+1.4
+1.5</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+              </Paragraph>
+            </Paragraphs>
+            <Top>1.55in</Top>
+            <Left>0in</Left>
+            <Height>1.25in</Height>
+            <Width>0.7in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingLeft>3pt</PaddingLeft>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="NPLLabels">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>NON-PERFORMING LOANS AND ADVANCES
+Gross Non-Performing Loans and Advances
+Less: Interest in Suspense
+Total Non-Performing Loans and Advances (1.1 - 1.2)
+Less: Allowance for Loan Loss
+Net Non-Performing Loans (1.3 - 1.4)</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+              </Paragraph>
+            </Paragraphs>
+            <Top>1.55in</Top>
+            <Left>0.7in</Left>
+            <Height>1.25in</Height>
+            <Width>4in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingLeft>3pt</PaddingLeft>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="NPLCurrent">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=vbCrLf &amp; Format(First(Fields!CurrentGrossNPL.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!CurrentInterestSuspense.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!CurrentNetNPLBeforeAllowance.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!CurrentLoanLossAllowance.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!CurrentNetNPL.Value, "DataSet_Result"), "N2")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>1.55in</Top>
+            <Left>4.7in</Left>
+            <Height>1.25in</Height>
+            <Width>1.4in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingRight>3pt</PaddingRight>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="NPLPrior">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=vbCrLf &amp; Format(First(Fields!PriorGrossNPL.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!PriorInterestSuspense.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!PriorNetNPLBeforeAllowance.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!PriorLoanLossAllowance.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!PriorNetNPL.Value, "DataSet_Result"), "N2")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>1.55in</Top>
+            <Left>6.1in</Left>
+            <Height>1.25in</Height>
+            <Width>1.4in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingRight>3pt</PaddingRight>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="InsiderRefs">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>2
+2.1
+2.2
+2.3</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+              </Paragraph>
+            </Paragraphs>
+            <Top>2.8in</Top>
+            <Left>0in</Left>
+            <Height>0.85in</Height>
+            <Width>0.7in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingLeft>3pt</PaddingLeft>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="InsiderLabels">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>INSIDER LOANS AND ADVANCES
+Directors and Supervisory Committee
+Employees
+Total Insider Loans, Advances and Other Facilities</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+              </Paragraph>
+            </Paragraphs>
+            <Top>2.8in</Top>
+            <Left>0.7in</Left>
+            <Height>0.85in</Height>
+            <Width>4in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingLeft>3pt</PaddingLeft>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="InsiderCurrent">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=vbCrLf &amp; Format(First(Fields!CurrentDirectorLoans.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!CurrentEmployeeLoans.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!CurrentTotalInsiderLoans.Value, "DataSet_Result"), "N2")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>2.8in</Top>
+            <Left>4.7in</Left>
+            <Height>0.85in</Height>
+            <Width>1.4in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingRight>3pt</PaddingRight>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="InsiderPrior">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=vbCrLf &amp; Format(First(Fields!PriorDirectorLoans.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!PriorEmployeeLoans.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!PriorTotalInsiderLoans.Value, "DataSet_Result"), "N2")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>2.8in</Top>
+            <Left>6.1in</Left>
+            <Height>0.85in</Height>
+            <Width>1.4in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingRight>3pt</PaddingRight>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="OffBalanceRefs">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>3
+3.1
+3.2
+3.3</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+              </Paragraph>
+            </Paragraphs>
+            <Top>3.65in</Top>
+            <Left>0in</Left>
+            <Height>0.85in</Height>
+            <Width>0.7in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingLeft>3pt</PaddingLeft>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="OffBalanceLabels">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>OFF-BALANCE SHEET ITEMS
+Guarantees and Commitments
+Other Contingent Liabilities
+Total Contingent Liabilities</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+              </Paragraph>
+            </Paragraphs>
+            <Top>3.65in</Top>
+            <Left>0.7in</Left>
+            <Height>0.85in</Height>
+            <Width>4in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingLeft>3pt</PaddingLeft>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="OffBalanceCurrent">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=vbCrLf &amp; Format(First(Fields!CurrentGuarantees.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!CurrentOtherContingent.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!CurrentTotalContingent.Value, "DataSet_Result"), "N2")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>3.65in</Top>
+            <Left>4.7in</Left>
+            <Height>0.85in</Height>
+            <Width>1.4in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingRight>3pt</PaddingRight>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="OffBalancePrior">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=vbCrLf &amp; Format(First(Fields!PriorGuarantees.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!PriorOtherContingent.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!PriorTotalContingent.Value, "DataSet_Result"), "N2")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>3.65in</Top>
+            <Left>6.1in</Left>
+            <Height>0.85in</Height>
+            <Width>1.4in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingRight>3pt</PaddingRight>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="CapitalRefs">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>4
+4.1
+4.3
+4.4
+4.5
+4.6
+4.7
+4.8</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+              </Paragraph>
+            </Paragraphs>
+            <Top>4.5in</Top>
+            <Left>0in</Left>
+            <Height>1.65in</Height>
+            <Width>0.7in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingLeft>3pt</PaddingLeft>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="CapitalLabels">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>CAPITAL STRENGTH
+Core Capital
+Core Capital to Total Asset Ratio
+Minimum Statutory Ratio
+Excess / Deficiency
+Core Capital to Deposit Liabilities Ratio
+Minimum Statutory Ratio
+Excess / Deficiency</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+              </Paragraph>
+            </Paragraphs>
+            <Top>4.5in</Top>
+            <Left>0.7in</Left>
+            <Height>1.65in</Height>
+            <Width>4in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingLeft>3pt</PaddingLeft>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="CapitalCurrent">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=vbCrLf &amp; Format(First(Fields!CurrentCoreCapital.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!CurrentCoreCapitalAssetRatio.Value, "DataSet_Result"), "P2") &amp; vbCrLf &amp; Format(0.08, "P2") &amp; vbCrLf &amp; Format(First(Fields!CurrentCoreCapitalAssetRatio.Value, "DataSet_Result") - 0.08, "P2") &amp; vbCrLf &amp; Format(First(Fields!CurrentCoreCapitalDepositRatio.Value, "DataSet_Result"), "P2") &amp; vbCrLf &amp; Format(0.05, "P2") &amp; vbCrLf &amp; Format(First(Fields!CurrentCoreCapitalDepositRatio.Value, "DataSet_Result") - 0.05, "P2")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>4.5in</Top>
+            <Left>4.7in</Left>
+            <Height>1.65in</Height>
+            <Width>1.4in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingRight>3pt</PaddingRight>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="CapitalPrior">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=vbCrLf &amp; Format(First(Fields!PriorCoreCapital.Value, "DataSet_Result"), "N2") &amp; vbCrLf &amp; Format(First(Fields!PriorCoreCapitalAssetRatio.Value, "DataSet_Result"), "P2") &amp; vbCrLf &amp; Format(0.08, "P2") &amp; vbCrLf &amp; Format(First(Fields!PriorCoreCapitalAssetRatio.Value, "DataSet_Result") - 0.08, "P2") &amp; vbCrLf &amp; Format(First(Fields!PriorCoreCapitalDepositRatio.Value, "DataSet_Result"), "P2") &amp; vbCrLf &amp; Format(0.05, "P2") &amp; vbCrLf &amp; Format(First(Fields!PriorCoreCapitalDepositRatio.Value, "DataSet_Result") - 0.05, "P2")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>4.5in</Top>
+            <Left>6.1in</Left>
+            <Height>1.65in</Height>
+            <Width>1.4in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingRight>3pt</PaddingRight>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="LiquidityRefs">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>5
+5.1
+5.2
+5.3</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+              </Paragraph>
+            </Paragraphs>
+            <Top>6.15in</Top>
+            <Left>0in</Left>
+            <Height>0.85in</Height>
+            <Width>0.7in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingLeft>3pt</PaddingLeft>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="LiquidityLabels">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>LIQUIDITY
+Liquidity Ratio
+Minimum Statutory Ratio
+Excess / Deficiency</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+              </Paragraph>
+            </Paragraphs>
+            <Top>6.15in</Top>
+            <Left>0.7in</Left>
+            <Height>0.85in</Height>
+            <Width>4in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingLeft>3pt</PaddingLeft>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="LiquidityCurrent">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=vbCrLf &amp; Format(First(Fields!CurrentLiquidityRatio.Value, "DataSet_Result"), "P2") &amp; vbCrLf &amp; Format(0.1, "P2") &amp; vbCrLf &amp; Format(First(Fields!CurrentLiquidityRatio.Value, "DataSet_Result") - 0.1, "P2")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>6.15in</Top>
+            <Left>4.7in</Left>
+            <Height>0.85in</Height>
+            <Width>1.4in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingRight>3pt</PaddingRight>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="LiquidityPrior">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=vbCrLf &amp; Format(First(Fields!PriorLiquidityRatio.Value, "DataSet_Result"), "P2") &amp; vbCrLf &amp; Format(0.1, "P2") &amp; vbCrLf &amp; Format(First(Fields!PriorLiquidityRatio.Value, "DataSet_Result") - 0.1, "P2")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>6.15in</Top>
+            <Left>6.1in</Left>
+            <Height>0.85in</Height>
+            <Width>1.4in</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingRight>3pt</PaddingRight>
+              <PaddingTop>3pt</PaddingTop>
+            </Style>
+          </Textbox>
+          <Textbox Name="Declaration">
+            <CanGrow>true</CanGrow>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Note: This return should be received on or before the 15th day of the month following the end of every quarter.
+
+We declare that this return, to the best of our knowledge and belief, is correct.
+
+Name of Authorizing Officer __________________  Sign __________  Date __________
+Name of Countersigning Officer _______________  Sign __________  Date __________</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+              </Paragraph>
+            </Paragraphs>
+            <Top>7.15in</Top>
+            <Left>0in</Left>
+            <Height>1.15in</Height>
+            <Width>7.5in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>8.4in</Height>
+        <Style />
+      </Body>
+      <Width>7.5in</Width>
+      <Page>
+        <PageHeight>11.7in</PageHeight>
+        <PageWidth>8.3in</PageWidth>
+        <LeftMargin>0.4in</LeftMargin>
+        <RightMargin>0.4in</RightMargin>
+        <TopMargin>0.4in</TopMargin>
+        <BottomMargin>0.4in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>984b36f7-e273-42ea-b251-6753e682497a</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="SaccoName">
+          <DataField>SaccoName</DataField>
+        </Field>
+        <Field Name="FinancialYear">
+          <DataField>FinancialYear</DataField>
+        </Field>
+        <Field Name="StartDate">
+          <DataField>StartDate</DataField>
+        </Field>
+        <Field Name="EndDate">
+          <DataField>EndDate</DataField>
+        </Field>
+        <Field Name="PriorStartDate">
+          <DataField>PriorStartDate</DataField>
+        </Field>
+        <Field Name="PriorEndDate">
+          <DataField>PriorEndDate</DataField>
+        </Field>
+        <Field Name="CurrentGrossNPL">
+          <DataField>CurrentGrossNPL</DataField>
+        </Field>
+        <Field Name="CurrentGrossNPLFormat">
+          <DataField>CurrentGrossNPLFormat</DataField>
+        </Field>
+        <Field Name="PriorGrossNPL">
+          <DataField>PriorGrossNPL</DataField>
+        </Field>
+        <Field Name="PriorGrossNPLFormat">
+          <DataField>PriorGrossNPLFormat</DataField>
+        </Field>
+        <Field Name="CurrentInterestSuspense">
+          <DataField>CurrentInterestSuspense</DataField>
+        </Field>
+        <Field Name="CurrentInterestSuspenseFormat">
+          <DataField>CurrentInterestSuspenseFormat</DataField>
+        </Field>
+        <Field Name="PriorInterestSuspense">
+          <DataField>PriorInterestSuspense</DataField>
+        </Field>
+        <Field Name="PriorInterestSuspenseFormat">
+          <DataField>PriorInterestSuspenseFormat</DataField>
+        </Field>
+        <Field Name="CurrentNetNPLBeforeAllowance">
+          <DataField>CurrentNetNPLBeforeAllowance</DataField>
+        </Field>
+        <Field Name="CurrentNetNPLBeforeAllowanceFormat">
+          <DataField>CurrentNetNPLBeforeAllowanceFormat</DataField>
+        </Field>
+        <Field Name="PriorNetNPLBeforeAllowance">
+          <DataField>PriorNetNPLBeforeAllowance</DataField>
+        </Field>
+        <Field Name="PriorNetNPLBeforeAllowanceFormat">
+          <DataField>PriorNetNPLBeforeAllowanceFormat</DataField>
+        </Field>
+        <Field Name="CurrentLoanLossAllowance">
+          <DataField>CurrentLoanLossAllowance</DataField>
+        </Field>
+        <Field Name="CurrentLoanLossAllowanceFormat">
+          <DataField>CurrentLoanLossAllowanceFormat</DataField>
+        </Field>
+        <Field Name="PriorLoanLossAllowance">
+          <DataField>PriorLoanLossAllowance</DataField>
+        </Field>
+        <Field Name="PriorLoanLossAllowanceFormat">
+          <DataField>PriorLoanLossAllowanceFormat</DataField>
+        </Field>
+        <Field Name="CurrentNetNPL">
+          <DataField>CurrentNetNPL</DataField>
+        </Field>
+        <Field Name="CurrentNetNPLFormat">
+          <DataField>CurrentNetNPLFormat</DataField>
+        </Field>
+        <Field Name="PriorNetNPL">
+          <DataField>PriorNetNPL</DataField>
+        </Field>
+        <Field Name="PriorNetNPLFormat">
+          <DataField>PriorNetNPLFormat</DataField>
+        </Field>
+        <Field Name="CurrentDirectorLoans">
+          <DataField>CurrentDirectorLoans</DataField>
+        </Field>
+        <Field Name="CurrentDirectorLoansFormat">
+          <DataField>CurrentDirectorLoansFormat</DataField>
+        </Field>
+        <Field Name="PriorDirectorLoans">
+          <DataField>PriorDirectorLoans</DataField>
+        </Field>
+        <Field Name="PriorDirectorLoansFormat">
+          <DataField>PriorDirectorLoansFormat</DataField>
+        </Field>
+        <Field Name="CurrentEmployeeLoans">
+          <DataField>CurrentEmployeeLoans</DataField>
+        </Field>
+        <Field Name="CurrentEmployeeLoansFormat">
+          <DataField>CurrentEmployeeLoansFormat</DataField>
+        </Field>
+        <Field Name="PriorEmployeeLoans">
+          <DataField>PriorEmployeeLoans</DataField>
+        </Field>
+        <Field Name="PriorEmployeeLoansFormat">
+          <DataField>PriorEmployeeLoansFormat</DataField>
+        </Field>
+        <Field Name="CurrentTotalInsiderLoans">
+          <DataField>CurrentTotalInsiderLoans</DataField>
+        </Field>
+        <Field Name="CurrentTotalInsiderLoansFormat">
+          <DataField>CurrentTotalInsiderLoansFormat</DataField>
+        </Field>
+        <Field Name="PriorTotalInsiderLoans">
+          <DataField>PriorTotalInsiderLoans</DataField>
+        </Field>
+        <Field Name="PriorTotalInsiderLoansFormat">
+          <DataField>PriorTotalInsiderLoansFormat</DataField>
+        </Field>
+        <Field Name="CurrentGuarantees">
+          <DataField>CurrentGuarantees</DataField>
+        </Field>
+        <Field Name="CurrentGuaranteesFormat">
+          <DataField>CurrentGuaranteesFormat</DataField>
+        </Field>
+        <Field Name="PriorGuarantees">
+          <DataField>PriorGuarantees</DataField>
+        </Field>
+        <Field Name="PriorGuaranteesFormat">
+          <DataField>PriorGuaranteesFormat</DataField>
+        </Field>
+        <Field Name="CurrentOtherContingent">
+          <DataField>CurrentOtherContingent</DataField>
+        </Field>
+        <Field Name="CurrentOtherContingentFormat">
+          <DataField>CurrentOtherContingentFormat</DataField>
+        </Field>
+        <Field Name="PriorOtherContingent">
+          <DataField>PriorOtherContingent</DataField>
+        </Field>
+        <Field Name="PriorOtherContingentFormat">
+          <DataField>PriorOtherContingentFormat</DataField>
+        </Field>
+        <Field Name="CurrentTotalContingent">
+          <DataField>CurrentTotalContingent</DataField>
+        </Field>
+        <Field Name="CurrentTotalContingentFormat">
+          <DataField>CurrentTotalContingentFormat</DataField>
+        </Field>
+        <Field Name="PriorTotalContingent">
+          <DataField>PriorTotalContingent</DataField>
+        </Field>
+        <Field Name="PriorTotalContingentFormat">
+          <DataField>PriorTotalContingentFormat</DataField>
+        </Field>
+        <Field Name="CurrentCoreCapital">
+          <DataField>CurrentCoreCapital</DataField>
+        </Field>
+        <Field Name="CurrentCoreCapitalFormat">
+          <DataField>CurrentCoreCapitalFormat</DataField>
+        </Field>
+        <Field Name="PriorCoreCapital">
+          <DataField>PriorCoreCapital</DataField>
+        </Field>
+        <Field Name="PriorCoreCapitalFormat">
+          <DataField>PriorCoreCapitalFormat</DataField>
+        </Field>
+        <Field Name="CurrentCoreCapitalAssetRatio">
+          <DataField>CurrentCoreCapitalAssetRatio</DataField>
+        </Field>
+        <Field Name="CurrentCoreCapitalAssetRatioFormat">
+          <DataField>CurrentCoreCapitalAssetRatioFormat</DataField>
+        </Field>
+        <Field Name="PriorCoreCapitalAssetRatio">
+          <DataField>PriorCoreCapitalAssetRatio</DataField>
+        </Field>
+        <Field Name="PriorCoreCapitalAssetRatioFormat">
+          <DataField>PriorCoreCapitalAssetRatioFormat</DataField>
+        </Field>
+        <Field Name="CurrentCoreCapitalDepositRatio">
+          <DataField>CurrentCoreCapitalDepositRatio</DataField>
+        </Field>
+        <Field Name="CurrentCoreCapitalDepositRatioFormat">
+          <DataField>CurrentCoreCapitalDepositRatioFormat</DataField>
+        </Field>
+        <Field Name="PriorCoreCapitalDepositRatio">
+          <DataField>PriorCoreCapitalDepositRatio</DataField>
+        </Field>
+        <Field Name="PriorCoreCapitalDepositRatioFormat">
+          <DataField>PriorCoreCapitalDepositRatioFormat</DataField>
+        </Field>
+        <Field Name="CurrentLiquidityRatio">
+          <DataField>CurrentLiquidityRatio</DataField>
+        </Field>
+        <Field Name="CurrentLiquidityRatioFormat">
+          <DataField>CurrentLiquidityRatioFormat</DataField>
+        </Field>
+        <Field Name="PriorLiquidityRatio">
+          <DataField>PriorLiquidityRatio</DataField>
+        </Field>
+        <Field Name="PriorLiquidityRatioFormat">
+          <DataField>PriorLiquidityRatioFormat</DataField>
+        </Field>
+        <Field Name="CoreCapitalAssetMinimum">
+          <DataField>CoreCapitalAssetMinimum</DataField>
+        </Field>
+        <Field Name="CoreCapitalAssetMinimumFormat">
+          <DataField>CoreCapitalAssetMinimumFormat</DataField>
+        </Field>
+        <Field Name="CoreCapitalDepositMinimum">
+          <DataField>CoreCapitalDepositMinimum</DataField>
+        </Field>
+        <Field Name="CoreCapitalDepositMinimumFormat">
+          <DataField>CoreCapitalDepositMinimumFormat</DataField>
+        </Field>
+        <Field Name="LiquidityMinimum">
+          <DataField>LiquidityMinimum</DataField>
+        </Field>
+        <Field Name="LiquidityMinimumFormat">
+          <DataField>LiquidityMinimumFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

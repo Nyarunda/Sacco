@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="FANoCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FANoCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FANoCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FAClassCodeCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FAClassCodeCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FAClassCodeCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FASubclassCodeCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FASubclassCodeCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FASubclassCodeCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FALocationCodeCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FALocationCodeCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FALocationCodeCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookDeprMethodCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookDeprMethodCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookDeprMethodCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookFAPostingGroupCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookFAPostingGroupCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookFAPostingGroupCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookStraightLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookStraightLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookStraightLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookNoofDeprYrsCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookNoofDeprYrsCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookNoofDeprYrsCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookNoofDeprMonthsCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookNoofDeprMonthsCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookNoofDeprMonthsCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookFixedDeprAmtCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookFixedDeprAmtCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookFixedDeprAmtCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookDecliningBalanceCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookDecliningBalanceCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookDecliningBalanceCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookDeprTableCodeCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookDeprTableCodeCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookDeprTableCodeCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookFinalRoundingAmtCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookFinalRoundingAmtCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookFinalRoundingAmtCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookEndingBookValueCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookEndingBookValueCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookEndingBookValueCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookFAExchangeRateCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookFAExchangeRateCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookFAExchangeRateCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookUseFALedgCheckCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookUseFALedgCheckCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookUseFALedgCheckCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookDeprbelowZeroCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookDeprbelowZeroCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookDeprbelowZeroCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookFDeprAmtbelowZeroCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookFDeprAmtbelowZeroCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookFDeprAmtbelowZeroCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookProjProceedDspslCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookProjProceedDspslCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookProjProceedDspslCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookAccumDeprCustomCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookAccumDeprCustomCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookAccumDeprCustomCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookThisYrCustomCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookThisYrCustomCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookThisYrCustomCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADeprBookPropertyClassCustomCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADeprBookPropertyClassCustomCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADeprBookPropertyClassCustomCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="DeprBookText">
+          <DataField>DeprBookText</DataField>
+        </Field>
+        <Field Name="FATableCaptionFAFilter">
+          <DataField>FATableCaptionFAFilter</DataField>
+        </Field>
+        <Field Name="FAFilter">
+          <DataField>FAFilter</DataField>
+        </Field>
+        <Field Name="FANo">
+          <DataField>FANo</DataField>
+        </Field>
+        <Field Name="FADesc">
+          <DataField>FADesc</DataField>
+        </Field>
+        <Field Name="FAMainAssetComponent">
+          <DataField>FAMainAssetComponent</DataField>
+        </Field>
+        <Field Name="BudgetedAssetFieldname">
+          <DataField>BudgetedAssetFieldname</DataField>
+        </Field>
+        <Field Name="FASerialNo">
+          <DataField>FASerialNo</DataField>
+        </Field>
+        <Field Name="FAComponentofMainAsset">
+          <DataField>FAComponentofMainAsset</DataField>
+        </Field>
+        <Field Name="ComponentFieldname">
+          <DataField>ComponentFieldname</DataField>
+        </Field>
+        <Field Name="GlobalDim1CodeCaption">
+          <DataField>GlobalDim1CodeCaption</DataField>
+        </Field>
+        <Field Name="FAGlobalDim1Code">
+          <DataField>FAGlobalDim1Code</DataField>
+        </Field>
+        <Field Name="GlobalDim2CodeCaption">
+          <DataField>GlobalDim2CodeCaption</DataField>
+        </Field>
+        <Field Name="FAGlobalDim2Code">
+          <DataField>FAGlobalDim2Code</DataField>
+        </Field>
+        <Field Name="FAClassCode">
+          <DataField>FAClassCode</DataField>
+        </Field>
+        <Field Name="FASubclassCode">
+          <DataField>FASubclassCode</DataField>
+        </Field>
+        <Field Name="FALocationCode">
+          <DataField>FALocationCode</DataField>
+        </Field>
+        <Field Name="PageGroupNo">
+          <DataField>PageGroupNo</DataField>
+        </Field>
+        <Field Name="FAListCaption">
+          <DataField>FAListCaption</DataField>
+        </Field>
+        <Field Name="CurrReportPageNoCaption">
+          <DataField>CurrReportPageNoCaption</DataField>
+        </Field>
+        <Field Name="FADeprBookDeprMethod">
+          <DataField>FADeprBookDeprMethod</DataField>
+        </Field>
+        <Field Name="FADeprBookDeprStartingDate">
+          <DataField>FADeprBookDeprStartingDate</DataField>
+        </Field>
+        <Field Name="FADeprBookFAPostingGroup">
+          <DataField>FADeprBookFAPostingGroup</DataField>
+        </Field>
+        <Field Name="FADeprBookStraightLine">
+          <DataField>FADeprBookStraightLine</DataField>
+        </Field>
+        <Field Name="FADeprBookStraightLineFormat">
+          <DataField>FADeprBookStraightLineFormat</DataField>
+        </Field>
+        <Field Name="FADeprBookNoofDeprYrs">
+          <DataField>FADeprBookNoofDeprYrs</DataField>
+        </Field>
+        <Field Name="FADeprBookNoofDeprYrsFormat">
+          <DataField>FADeprBookNoofDeprYrsFormat</DataField>
+        </Field>
+        <Field Name="FADeprBookNoofDeprMonths">
+          <DataField>FADeprBookNoofDeprMonths</DataField>
+        </Field>
+        <Field Name="FADeprBookNoofDeprMonthsFormat">
+          <DataField>FADeprBookNoofDeprMonthsFormat</DataField>
+        </Field>
+        <Field Name="FADeprBookDeprEndingDate">
+          <DataField>FADeprBookDeprEndingDate</DataField>
+        </Field>
+        <Field Name="FADeprBookFixedDeprAmt">
+          <DataField>FADeprBookFixedDeprAmt</DataField>
+        </Field>
+        <Field Name="FADeprBookFixedDeprAmtFormat">
+          <DataField>FADeprBookFixedDeprAmtFormat</DataField>
+        </Field>
+        <Field Name="FADeprBookDecliningBalance">
+          <DataField>FADeprBookDecliningBalance</DataField>
+        </Field>
+        <Field Name="FADeprBookDecliningBalanceFormat">
+          <DataField>FADeprBookDecliningBalanceFormat</DataField>
+        </Field>
+        <Field Name="FADeprBookDeprTableCode">
+          <DataField>FADeprBookDeprTableCode</DataField>
+        </Field>
+        <Field Name="FADeprBookUserDefinedDeprDt">
+          <DataField>FADeprBookUserDefinedDeprDt</DataField>
+        </Field>
+        <Field Name="FADeprBookFinalRoundingAmt">
+          <DataField>FADeprBookFinalRoundingAmt</DataField>
+        </Field>
+        <Field Name="FADeprBookFinalRoundingAmtFormat">
+          <DataField>FADeprBookFinalRoundingAmtFormat</DataField>
+        </Field>
+        <Field Name="FADeprBookEndingBookValue">
+          <DataField>FADeprBookEndingBookValue</DataField>
+        </Field>
+        <Field Name="FADeprBookEndingBookValueFormat">
+          <DataField>FADeprBookEndingBookValueFormat</DataField>
+        </Field>
+        <Field Name="FADeprBookFAExchangeRate">
+          <DataField>FADeprBookFAExchangeRate</DataField>
+        </Field>
+        <Field Name="FADeprBookFAExchangeRateFormat">
+          <DataField>FADeprBookFAExchangeRateFormat</DataField>
+        </Field>
+        <Field Name="FADeprBookUseFALedgCheck">
+          <DataField>FADeprBookUseFALedgCheck</DataField>
+        </Field>
+        <Field Name="FADeprBookDeprbelowZero">
+          <DataField>FADeprBookDeprbelowZero</DataField>
+        </Field>
+        <Field Name="FADeprBookDeprbelowZeroFormat">
+          <DataField>FADeprBookDeprbelowZeroFormat</DataField>
+        </Field>
+        <Field Name="FADeprBookFDeprAmtbelowZero">
+          <DataField>FADeprBookFDeprAmtbelowZero</DataField>
+        </Field>
+        <Field Name="FADeprBookFDeprAmtbelowZeroFormat">
+          <DataField>FADeprBookFDeprAmtbelowZeroFormat</DataField>
+        </Field>
+        <Field Name="FADeprBookProjProceedDspsl">
+          <DataField>FADeprBookProjProceedDspsl</DataField>
+        </Field>
+        <Field Name="FADeprBookProjProceedDspslFormat">
+          <DataField>FADeprBookProjProceedDspslFormat</DataField>
+        </Field>
+        <Field Name="FADeprBookProjDisposalDate">
+          <DataField>FADeprBookProjDisposalDate</DataField>
+        </Field>
+        <Field Name="FADeprBookStartingDateCustom">
+          <DataField>FADeprBookStartingDateCustom</DataField>
+        </Field>
+        <Field Name="FADeprBookAccumDeprCustom">
+          <DataField>FADeprBookAccumDeprCustom</DataField>
+        </Field>
+        <Field Name="FADeprBookAccumDeprCustomFormat">
+          <DataField>FADeprBookAccumDeprCustomFormat</DataField>
+        </Field>
+        <Field Name="FADeprBookThisYrCustom">
+          <DataField>FADeprBookThisYrCustom</DataField>
+        </Field>
+        <Field Name="FADeprBookThisYrCustomFormat">
+          <DataField>FADeprBookThisYrCustomFormat</DataField>
+        </Field>
+        <Field Name="FADeprBookEndingDateCustom">
+          <DataField>FADeprBookEndingDateCustom</DataField>
+        </Field>
+        <Field Name="FADeprBookPropertyClassCustom">
+          <DataField>FADeprBookPropertyClassCustom</DataField>
+        </Field>
+        <Field Name="FADeprBookDeprStartDateCaption">
+          <DataField>FADeprBookDeprStartDateCaption</DataField>
+        </Field>
+        <Field Name="FADeprBookDeprEndDateCaption">
+          <DataField>FADeprBookDeprEndDateCaption</DataField>
+        </Field>
+        <Field Name="FADeprBookUsrDfndDeprDtCaption">
+          <DataField>FADeprBookUsrDfndDeprDtCaption</DataField>
+        </Field>
+        <Field Name="FADeprBookProjDisplDateCaption">
+          <DataField>FADeprBookProjDisplDateCaption</DataField>
+        </Field>
+        <Field Name="FADeprBookStartDateCustomCaption">
+          <DataField>FADeprBookStartDateCustomCaption</DataField>
+        </Field>
+        <Field Name="FADeprBookEndDateCustomCptn">
+          <DataField>FADeprBookEndDateCustomCptn</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

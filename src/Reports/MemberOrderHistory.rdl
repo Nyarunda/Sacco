@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="FilterString">
+          <DataField>FilterString</DataField>
+        </Field>
+        <Field Name="PrintDateTime">
+          <DataField>PrintDateTime</DataField>
+        </Field>
+        <Field Name="UserID">
+          <DataField>UserID</DataField>
+        </Field>
+        <Field Name="PeriodText">
+          <DataField>PeriodText</DataField>
+        </Field>
+        <Field Name="MemberNo">
+          <DataField>MemberNo</DataField>
+        </Field>
+        <Field Name="MemberName">
+          <DataField>MemberName</DataField>
+        </Field>
+        <Field Name="MemberCapitalBalance">
+          <DataField>MemberCapitalBalance</DataField>
+        </Field>
+        <Field Name="MemberCapitalBalanceFormat">
+          <DataField>MemberCapitalBalanceFormat</DataField>
+        </Field>
+        <Field Name="MemberShareBalance">
+          <DataField>MemberShareBalance</DataField>
+        </Field>
+        <Field Name="MemberShareBalanceFormat">
+          <DataField>MemberShareBalanceFormat</DataField>
+        </Field>
+        <Field Name="AvailableSharesForSale">
+          <DataField>AvailableSharesForSale</DataField>
+        </Field>
+        <Field Name="AvailableSharesForSaleFormat">
+          <DataField>AvailableSharesForSaleFormat</DataField>
+        </Field>
+        <Field Name="MemberTotalOrders">
+          <DataField>MemberTotalOrders</DataField>
+        </Field>
+        <Field Name="MemberBuyOrders">
+          <DataField>MemberBuyOrders</DataField>
+        </Field>
+        <Field Name="MemberSellOrders">
+          <DataField>MemberSellOrders</DataField>
+        </Field>
+        <Field Name="MemberTotalShares">
+          <DataField>MemberTotalShares</DataField>
+        </Field>
+        <Field Name="MemberTotalSharesFormat">
+          <DataField>MemberTotalSharesFormat</DataField>
+        </Field>
+        <Field Name="MemberTotalValue">
+          <DataField>MemberTotalValue</DataField>
+        </Field>
+        <Field Name="MemberTotalValueFormat">
+          <DataField>MemberTotalValueFormat</DataField>
+        </Field>
+        <Field Name="MemberOpenOrders">
+          <DataField>MemberOpenOrders</DataField>
+        </Field>
+        <Field Name="MemberCompletedOrders">
+          <DataField>MemberCompletedOrders</DataField>
+        </Field>
+        <Field Name="OrderID">
+          <DataField>OrderID</DataField>
+        </Field>
+        <Field Name="OrderDate">
+          <DataField>OrderDate</DataField>
+        </Field>
+        <Field Name="OrderTime">
+          <DataField>OrderTime</DataField>
+        </Field>
+        <Field Name="OrderType">
+          <DataField>OrderType</DataField>
+        </Field>
+        <Field Name="TotalShares">
+          <DataField>TotalShares</DataField>
+        </Field>
+        <Field Name="TotalSharesFormat">
+          <DataField>TotalSharesFormat</DataField>
+        </Field>
+        <Field Name="PricePerShare">
+          <DataField>PricePerShare</DataField>
+        </Field>
+        <Field Name="PricePerShareFormat">
+          <DataField>PricePerShareFormat</DataField>
+        </Field>
+        <Field Name="TotalAmount">
+          <DataField>TotalAmount</DataField>
+        </Field>
+        <Field Name="TotalAmountFormat">
+          <DataField>TotalAmountFormat</DataField>
+        </Field>
+        <Field Name="MatchedShares">
+          <DataField>MatchedShares</DataField>
+        </Field>
+        <Field Name="MatchedSharesFormat">
+          <DataField>MatchedSharesFormat</DataField>
+        </Field>
+        <Field Name="RemainingShares">
+          <DataField>RemainingShares</DataField>
+        </Field>
+        <Field Name="RemainingSharesFormat">
+          <DataField>RemainingSharesFormat</DataField>
+        </Field>
+        <Field Name="MatchedAmount">
+          <DataField>MatchedAmount</DataField>
+        </Field>
+        <Field Name="MatchedAmountFormat">
+          <DataField>MatchedAmountFormat</DataField>
+        </Field>
+        <Field Name="RemainingAmount">
+          <DataField>RemainingAmount</DataField>
+        </Field>
+        <Field Name="RemainingAmountFormat">
+          <DataField>RemainingAmountFormat</DataField>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="Posted">
+          <DataField>Posted</DataField>
+        </Field>
+        <Field Name="Cancelled">
+          <DataField>Cancelled</DataField>
+        </Field>
+        <Field Name="CancelReason">
+          <DataField>CancelReason</DataField>
+        </Field>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

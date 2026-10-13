@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="ReportForNavId_4645">
+          <DataField>ReportForNavId_4645</DataField>
+        </Field>
+        <Field Name="LoanBalance_Buffer">
+          <DataField>LoanBalance_Buffer</DataField>
+        </Field>
+        <Field Name="LoanBalance_BufferFormat">
+          <DataField>LoanBalance_BufferFormat</DataField>
+        </Field>
+        <Field Name="NonPerforming_Buffer">
+          <DataField>NonPerforming_Buffer</DataField>
+        </Field>
+        <Field Name="NonPerforming_BufferFormat">
+          <DataField>NonPerforming_BufferFormat</DataField>
+        </Field>
+        <Field Name="DefaultedAmount_Buffer">
+          <DataField>DefaultedAmount_Buffer</DataField>
+        </Field>
+        <Field Name="DefaultedAmount_BufferFormat">
+          <DataField>DefaultedAmount_BufferFormat</DataField>
+        </Field>
+        <Field Name="PAR_Buffer">
+          <DataField>PAR_Buffer</DataField>
+        </Field>
+        <Field Name="PAR_BufferFormat">
+          <DataField>PAR_BufferFormat</DataField>
+        </Field>
+        <Field Name="CompPicture">
+          <DataField>CompPicture</DataField>
+        </Field>
+        <Field Name="CompName">
+          <DataField>CompName</DataField>
+        </Field>
+        <Field Name="ProductID_Buffer">
+          <DataField>ProductID_Buffer</DataField>
+        </Field>
+        <Field Name="Issued_Buffer">
+          <DataField>Issued_Buffer</DataField>
+        </Field>
+        <Field Name="Issued_BufferFormat">
+          <DataField>Issued_BufferFormat</DataField>
+        </Field>
+        <Field Name="Paid_Buffer">
+          <DataField>Paid_Buffer</DataField>
+        </Field>
+        <Field Name="Paid_BufferFormat">
+          <DataField>Paid_BufferFormat</DataField>
+        </Field>
+        <Field Name="IssuedCount_Buffer">
+          <DataField>IssuedCount_Buffer</DataField>
+        </Field>
+        <Field Name="PaidCount_Buffer">
+          <DataField>PaidCount_Buffer</DataField>
+        </Field>
+        <Field Name="PaidCount_BufferFormat">
+          <DataField>PaidCount_BufferFormat</DataField>
+        </Field>
+        <Field Name="LedgerFees_Buffer">
+          <DataField>LedgerFees_Buffer</DataField>
+        </Field>
+        <Field Name="LedgerFees_BufferFormat">
+          <DataField>LedgerFees_BufferFormat</DataField>
+        </Field>
+        <Field Name="Insurance_Buffer">
+          <DataField>Insurance_Buffer</DataField>
+        </Field>
+        <Field Name="Insurance_BufferFormat">
+          <DataField>Insurance_BufferFormat</DataField>
+        </Field>
+        <Field Name="ProductGroup_Buffer">
+          <DataField>ProductGroup_Buffer</DataField>
+        </Field>
+        <Field Name="DateFilter">
+          <DataField>DateFilter</DataField>
+        </Field>
+        <Field Name="Branch">
+          <DataField>Branch</DataField>
+        </Field>
+        <Field Name="ExpectedCollectionTarget_Buffer">
+          <DataField>ExpectedCollectionTarget_Buffer</DataField>
+        </Field>
+        <Field Name="ExpectedCollectionTarget_BufferFormat">
+          <DataField>ExpectedCollectionTarget_BufferFormat</DataField>
+        </Field>
+        <Field Name="ActualAmountCollected_Buffer">
+          <DataField>ActualAmountCollected_Buffer</DataField>
+        </Field>
+        <Field Name="ActualAmountCollected_BufferFormat">
+          <DataField>ActualAmountCollected_BufferFormat</DataField>
+        </Field>
+        <Field Name="PercentAchieved_Buffer">
+          <DataField>PercentAchieved_Buffer</DataField>
+        </Field>
+        <Field Name="AccountConverted_Buffer">
+          <DataField>AccountConverted_Buffer</DataField>
+        </Field>
+        <Field Name="AccountConverted_BufferFormat">
+          <DataField>AccountConverted_BufferFormat</DataField>
+        </Field>
+        <Field Name="ConversionPercent_Buffer">
+          <DataField>ConversionPercent_Buffer</DataField>
+        </Field>
+        <Field Name="ConversionPercent_BufferFormat">
+          <DataField>ConversionPercent_BufferFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

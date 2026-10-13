@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="M1">
+          <DataField>M1</DataField>
+        </Field>
+        <Field Name="M2">
+          <DataField>M2</DataField>
+        </Field>
+        <Field Name="M3">
+          <DataField>M3</DataField>
+        </Field>
+        <Field Name="M4">
+          <DataField>M4</DataField>
+        </Field>
+        <Field Name="M5">
+          <DataField>M5</DataField>
+        </Field>
+        <Field Name="M6">
+          <DataField>M6</DataField>
+        </Field>
+        <Field Name="M7">
+          <DataField>M7</DataField>
+        </Field>
+        <Field Name="M8">
+          <DataField>M8</DataField>
+        </Field>
+        <Field Name="M9">
+          <DataField>M9</DataField>
+        </Field>
+        <Field Name="M10">
+          <DataField>M10</DataField>
+        </Field>
+        <Field Name="M11">
+          <DataField>M11</DataField>
+        </Field>
+        <Field Name="M12">
+          <DataField>M12</DataField>
+        </Field>
+        <Field Name="No_SavingsAccounts">
+          <DataField>No_SavingsAccounts</DataField>
+        </Field>
+        <Field Name="Name_SavingsAccounts">
+          <DataField>Name_SavingsAccounts</DataField>
+        </Field>
+        <Field Name="Balance_SavingsAccounts">
+          <DataField>Balance_SavingsAccounts</DataField>
+        </Field>
+        <Field Name="Balance_SavingsAccountsFormat">
+          <DataField>Balance_SavingsAccountsFormat</DataField>
+        </Field>
+        <Field Name="ProductType_SavingsAccounts">
+          <DataField>ProductType_SavingsAccounts</DataField>
+        </Field>
+        <Field Name="MemberNo_SavingsAccounts">
+          <DataField>MemberNo_SavingsAccounts</DataField>
+        </Field>
+        <Field Name="ProductName_SavingsAccounts">
+          <DataField>ProductName_SavingsAccounts</DataField>
+        </Field>
+        <Field Name="compname">
+          <DataField>compname</DataField>
+        </Field>
+        <Field Name="CompanyInformation_Name">
+          <DataField>CompanyInformation_Name</DataField>
+        </Field>
+        <Field Name="CompanyInformation_Picture">
+          <DataField>CompanyInformation_Picture</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyTelephone">
+          <DataField>CompanyTelephone</DataField>
+        </Field>
+        <Field Name="CommunicationOnline">
+          <DataField>CommunicationOnline</DataField>
+        </Field>
+        <Field Name="Amount_LedgerEntry">
+          <DataField>Amount_LedgerEntry</DataField>
+        </Field>
+        <Field Name="Amount_LedgerEntryFormat">
+          <DataField>Amount_LedgerEntryFormat</DataField>
+        </Field>
+        <Field Name="v1">
+          <DataField>v1</DataField>
+        </Field>
+        <Field Name="v1Format">
+          <DataField>v1Format</DataField>
+        </Field>
+        <Field Name="v2">
+          <DataField>v2</DataField>
+        </Field>
+        <Field Name="v2Format">
+          <DataField>v2Format</DataField>
+        </Field>
+        <Field Name="v3">
+          <DataField>v3</DataField>
+        </Field>
+        <Field Name="v3Format">
+          <DataField>v3Format</DataField>
+        </Field>
+        <Field Name="v4">
+          <DataField>v4</DataField>
+        </Field>
+        <Field Name="v4Format">
+          <DataField>v4Format</DataField>
+        </Field>
+        <Field Name="v5">
+          <DataField>v5</DataField>
+        </Field>
+        <Field Name="v5Format">
+          <DataField>v5Format</DataField>
+        </Field>
+        <Field Name="v6">
+          <DataField>v6</DataField>
+        </Field>
+        <Field Name="v6Format">
+          <DataField>v6Format</DataField>
+        </Field>
+        <Field Name="V7">
+          <DataField>V7</DataField>
+        </Field>
+        <Field Name="V7Format">
+          <DataField>V7Format</DataField>
+        </Field>
+        <Field Name="V8">
+          <DataField>V8</DataField>
+        </Field>
+        <Field Name="V8Format">
+          <DataField>V8Format</DataField>
+        </Field>
+        <Field Name="V9">
+          <DataField>V9</DataField>
+        </Field>
+        <Field Name="V9Format">
+          <DataField>V9Format</DataField>
+        </Field>
+        <Field Name="V10">
+          <DataField>V10</DataField>
+        </Field>
+        <Field Name="V10Format">
+          <DataField>V10Format</DataField>
+        </Field>
+        <Field Name="V11">
+          <DataField>V11</DataField>
+        </Field>
+        <Field Name="V11Format">
+          <DataField>V11Format</DataField>
+        </Field>
+        <Field Name="V12">
+          <DataField>V12</DataField>
+        </Field>
+        <Field Name="V12Format">
+          <DataField>V12Format</DataField>
+        </Field>
+        <Field Name="OpenBal">
+          <DataField>OpenBal</DataField>
+        </Field>
+        <Field Name="OpenBalFormat">
+          <DataField>OpenBalFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

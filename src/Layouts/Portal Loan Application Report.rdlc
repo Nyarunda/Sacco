@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyInformation_Name">
+          <DataField>CompanyInformation_Name</DataField>
+        </Field>
+        <Field Name="CompanyInformation_Picture">
+          <DataField>CompanyInformation_Picture</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyTelephone">
+          <DataField>CompanyTelephone</DataField>
+        </Field>
+        <Field Name="CommunicationOnline">
+          <DataField>CommunicationOnline</DataField>
+        </Field>
+        <Field Name="AccountName">
+          <DataField>AccountName</DataField>
+        </Field>
+        <Field Name="AccountNo">
+          <DataField>AccountNo</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="ApplicationNo">
+          <DataField>ApplicationNo</DataField>
+        </Field>
+        <Field Name="ApprovedAmount">
+          <DataField>ApprovedAmount</DataField>
+        </Field>
+        <Field Name="ApprovedAmountFormat">
+          <DataField>ApprovedAmountFormat</DataField>
+        </Field>
+        <Field Name="Blocked">
+          <DataField>Blocked</DataField>
+        </Field>
+        <Field Name="Branch">
+          <DataField>Branch</DataField>
+        </Field>
+        <Field Name="Category">
+          <DataField>Category</DataField>
+        </Field>
+        <Field Name="CommisionAmount">
+          <DataField>CommisionAmount</DataField>
+        </Field>
+        <Field Name="CommisionAmountFormat">
+          <DataField>CommisionAmountFormat</DataField>
+        </Field>
+        <Field Name="Date">
+          <DataField>Date</DataField>
+        </Field>
+        <Field Name="DateDeactivated">
+          <DataField>DateDeactivated</DataField>
+        </Field>
+        <Field Name="DateEntered">
+          <DataField>DateEntered</DataField>
+        </Field>
+        <Field Name="DatePosted">
+          <DataField>DatePosted</DataField>
+        </Field>
+        <Field Name="Deactivated">
+          <DataField>Deactivated</DataField>
+        </Field>
+        <Field Name="DeactivatedBy">
+          <DataField>DeactivatedBy</DataField>
+        </Field>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+        <Field Name="EntryCode">
+          <DataField>EntryCode</DataField>
+        </Field>
+        <Field Name="ExpectedGuarantors">
+          <DataField>ExpectedGuarantors</DataField>
+        </Field>
+        <Field Name="FullyGuaranteed">
+          <DataField>FullyGuaranteed</DataField>
+        </Field>
+        <Field Name="LatestSalaryAmount">
+          <DataField>LatestSalaryAmount</DataField>
+        </Field>
+        <Field Name="LatestSalaryAmountFormat">
+          <DataField>LatestSalaryAmountFormat</DataField>
+        </Field>
+        <Field Name="LoanName">
+          <DataField>LoanName</DataField>
+        </Field>
+        <Field Name="LoanNo">
+          <DataField>LoanNo</DataField>
+        </Field>
+        <Field Name="LoanPeriod">
+          <DataField>LoanPeriod</DataField>
+        </Field>
+        <Field Name="LoanProductType">
+          <DataField>LoanProductType</DataField>
+        </Field>
+        <Field Name="LoanPurpose">
+          <DataField>LoanPurpose</DataField>
+        </Field>
+        <Field Name="MemberNo">
+          <DataField>MemberNo</DataField>
+        </Field>
+        <Field Name="Message">
+          <DataField>Message</DataField>
+        </Field>
+        <Field Name="MicroLoan">
+          <DataField>MicroLoan</DataField>
+        </Field>
+        <Field Name="MicroLoanCategory">
+          <DataField>MicroLoanCategory</DataField>
+        </Field>
+        <Field Name="NeedsGuarantors">
+          <DataField>NeedsGuarantors</DataField>
+        </Field>
+        <Field Name="NetSalary">
+          <DataField>NetSalary</DataField>
+        </Field>
+        <Field Name="NetSalaryFormat">
+          <DataField>NetSalaryFormat</DataField>
+        </Field>
+        <Field Name="NoSeries">
+          <DataField>NoSeries</DataField>
+        </Field>
+        <Field Name="Password">
+          <DataField>Password</DataField>
+        </Field>
+        <Field Name="Posted">
+          <DataField>Posted</DataField>
+        </Field>
+        <Field Name="Remarks">
+          <DataField>Remarks</DataField>
+        </Field>
+        <Field Name="RequestedAmount">
+          <DataField>RequestedAmount</DataField>
+        </Field>
+        <Field Name="RequestedAmountFormat">
+          <DataField>RequestedAmountFormat</DataField>
+        </Field>
+        <Field Name="STOAmount">
+          <DataField>STOAmount</DataField>
+        </Field>
+        <Field Name="STOAmountFormat">
+          <DataField>STOAmountFormat</DataField>
+        </Field>
+        <Field Name="SalaryLoan">
+          <DataField>SalaryLoan</DataField>
+        </Field>
+        <Field Name="SessionID">
+          <DataField>SessionID</DataField>
+        </Field>
+        <Field Name="Source">
+          <DataField>Source</DataField>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="SystemCreatedAt">
+          <DataField>SystemCreatedAt</DataField>
+        </Field>
+        <Field Name="SystemCreatedBy">
+          <DataField>SystemCreatedBy</DataField>
+        </Field>
+        <Field Name="SystemId">
+          <DataField>SystemId</DataField>
+        </Field>
+        <Field Name="SystemModifiedAt">
+          <DataField>SystemModifiedAt</DataField>
+        </Field>
+        <Field Name="Company_Picture">
+          <DataField>Company_Picture</DataField>
+        </Field>
+        <Field Name="SystemModifiedBy">
+          <DataField>SystemModifiedBy</DataField>
+        </Field>
+        <Field Name="TelephoneNo">
+          <DataField>TelephoneNo</DataField>
+        </Field>
+        <Field Name="TimeEntered">
+          <DataField>TimeEntered</DataField>
+        </Field>
+        <Field Name="Totalloans">
+          <DataField>Totalloans</DataField>
+        </Field>
+        <Field Name="TotalloansFormat">
+          <DataField>TotalloansFormat</DataField>
+        </Field>
+        <Field Name="Guarantor_Member_No_">
+          <DataField>Guarantor_Member_No_</DataField>
+        </Field>
+        <Field Name="Guarantor_Name">
+          <DataField>Guarantor_Name</DataField>
+        </Field>
+        <Field Name="Guarantor_Mobile_No_">
+          <DataField>Guarantor_Mobile_No_</DataField>
+        </Field>
+        <Field Name="Amount_Requested">
+          <DataField>Amount_Requested</DataField>
+        </Field>
+        <Field Name="Amount_Guaranteed">
+          <DataField>Amount_Guaranteed</DataField>
+        </Field>
+        <Field Name="Amount_GuaranteedFormat">
+          <DataField>Amount_GuaranteedFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

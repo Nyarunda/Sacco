@@ -1,0 +1,2248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>7e51334c-cf21-4a3c-94c8-cd37f5ff3805</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1.21648in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.11705in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.38441in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.16913in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.19792in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox16">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Loan No.</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox16</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LoanNo_LoanAppraisalBuffer">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!LoanNo_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>LoanNo_LoanAppraisalBuffer</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox80">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Loan Product</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox41</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ProductCode_LoanAppraisalBuffer">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ProductCode_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ProductCode_LoanAppraisalBuffer</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.19792in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Member No.</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="MemberNo_LoanAppraisalBuffer">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!MemberNo_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>MemberNo_LoanAppraisalBuffer</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox92">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Approved Amount</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox56</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox93">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ApprovedAmount_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox19</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.19792in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox82">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Member Name</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox21</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Name_LoanAppraisalBuffer">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Name_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Name_LoanAppraisalBuffer</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox66">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Installments</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox59</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox67">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Installments_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox19</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Left>0.47792in</Left>
+            <Height>0.59376in</Height>
+            <Width>6.88707in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Tablix Name="Tablix6">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>4.74583in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.14126in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox217">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>PAYMENT DETAILS</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox217</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>SeaGreen</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>2</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.19792in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox801">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Approved Amount</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox801</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ApprovedAmount_LoanAppraisalBuffer">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ApprovedAmount_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ApprovedAmount_LoanAppraisalBuffer</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.19792in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox27">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Total Financing</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox27</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TotalFinancing_LoanAppraisalBuffer">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!TotalFinancing_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>TotalFinancing_LoanAppraisalBuffer</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.19792in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox803">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Principle Top Up</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox803</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox813">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!PrincipleTopUp_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox802</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.19792in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox805">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Interest Top Up</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox805</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox804">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!InterestTopUp_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox802</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.19792in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox37">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Appraisal Top Up</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox37</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox814">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!TopUpAppraisal_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox802</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.19792in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox30">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Penalty Top Up</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox30</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox815">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!TopUpPenalty_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox802</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.19792in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox807">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Top Up Commission</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox807</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox806">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!TopUpCommission_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox802</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.19792in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox809">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>External Loan Cleared</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox809</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox808">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ExternalLoanCleared_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox802</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.19792in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox811">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Total Charges</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox811</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox810">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!TotalCharges_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox802</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.21539in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox32">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Excise Duty</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox32</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox816">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ExciseDuty_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox802</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.19792in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox218">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Net Amount</Value>
+                                  <Style>
+                                    <FontSize>10pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox218</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Silver</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox812">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!NetTakeHome_LoanAppraisalBuffer.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox802</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Silver</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Top>0.66039in</Top>
+            <Left>0.47792in</Left>
+            <Height>2.44459in</Height>
+            <Width>6.88709in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="Textbox47">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Prepared By  .................................................. Signature ..................................... Date..........................................</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox17</rd:DefaultName>
+            <Top>8.82571cm</Top>
+            <Left>1.21391cm</Left>
+            <Height>0.6cm</Height>
+            <Width>17.49326cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox50">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Checked By    ................................................... Signature ................................... Date..........................................</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox17</rd:DefaultName>
+            <Top>10.54779cm</Top>
+            <Left>0.45762in</Left>
+            <Height>0.6cm</Height>
+            <Width>17.49326cm</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox51">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Approved By  .................................................... Signature ................................... Date..........................................</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox17</rd:DefaultName>
+            <Top>12.10014cm</Top>
+            <Left>1.21387cm</Left>
+            <Height>0.6cm</Height>
+            <Width>17.49326cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>14.00529cm</Height>
+        <Style />
+      </Body>
+      <Width>18.70717cm</Width>
+      <Page>
+        <PageHeader>
+          <Height>1.51422cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox14">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=First(Fields!CompanyInfoName.Value, "DataSet_Result")</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox14</rd:DefaultName>
+              <Top>0.01421cm</Top>
+              <Left>1.21391cm</Left>
+              <Height>0.6cm</Height>
+              <Width>5.24757cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox17">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Loan Payment Voucher</Value>
+                      <Style>
+                        <FontSize>10pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox14</rd:DefaultName>
+              <Top>0.66418cm</Top>
+              <Left>1.21391cm</Left>
+              <Height>0.6cm</Height>
+              <Width>5.24757cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox52">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Page: </Value>
+                      <Style>
+                        <FontSize>10pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Globals!PageNumber</Value>
+                      <Style>
+                        <FontSize>10pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox14</rd:DefaultName>
+              <Top>0.01422cm</Top>
+              <Left>12.85099cm</Left>
+              <Height>0.6cm</Height>
+              <Width>5.85612cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox53">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=User!UserID</Value>
+                      <Style>
+                        <FontSize>10pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox14</rd:DefaultName>
+              <Top>0.66418cm</Top>
+              <Left>12.85099cm</Left>
+              <Height>0.6cm</Height>
+              <Width>5.85612cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Image Name="Image1">
+              <Source>Database</Source>
+              <Value>=First(Fields!CompanyInfo_Picture.Value, "DataSet_Result")</Value>
+              <MIMEType>image/jpeg</MIMEType>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.01422cm</Top>
+              <Left>6.98183cm</Left>
+              <Height>1.5cm</Height>
+              <Width>5.28354cm</Width>
+              <ZIndex>4</ZIndex>
+              <ToolTip>=First(Fields!CompanyInfo_Picture.Value, "DataSet_Result")</ToolTip>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>0.5cm</LeftMargin>
+        <TopMargin>0.5cm</TopMargin>
+        <ColumnSpacing>1.27cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="ReportForNavId_1">
+          <DataField>ReportForNavId_1</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Picture">
+          <DataField>CompanyInfo_Picture</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyTelephone">
+          <DataField>CompanyTelephone</DataField>
+        </Field>
+        <Field Name="CommunicationOnline">
+          <DataField>CommunicationOnline</DataField>
+        </Field>
+        <Field Name="Margin">
+          <DataField>Margin</DataField>
+        </Field>
+        <Field Name="MarginFormat">
+          <DataField>MarginFormat</DataField>
+        </Field>
+        <Field Name="Margin__Ref_">
+          <DataField>Margin__Ref_</DataField>
+        </Field>
+        <Field Name="Margin__Ref_Format">
+          <DataField>Margin__Ref_Format</DataField>
+        </Field>
+        <Field Name="Refinance">
+          <DataField>Refinance</DataField>
+        </Field>
+        <Field Name="RefinanceFormat">
+          <DataField>RefinanceFormat</DataField>
+        </Field>
+        <Field Name="GuarDef">
+          <DataField>GuarDef</DataField>
+        </Field>
+        <Field Name="NewTotalRepayment_LoanAppraisalBuffer">
+          <DataField>NewTotalRepayment_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="NewTotalRepayment_LoanAppraisalBufferFormat">
+          <DataField>NewTotalRepayment_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="AvailableDeposits_LoanAppraisalBuffer">
+          <DataField>AvailableDeposits_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="AvailableDeposits_LoanAppraisalBufferFormat">
+          <DataField>AvailableDeposits_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="CommittedDeposits_LoanAppraisalBuffer">
+          <DataField>CommittedDeposits_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="CommittedDeposits_LoanAppraisalBufferFormat">
+          <DataField>CommittedDeposits_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="ExisitingLoanRepayment_LoanAppraisalBuffer">
+          <DataField>ExisitingLoanRepayment_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="ExisitingLoanRepayment_LoanAppraisalBufferFormat">
+          <DataField>ExisitingLoanRepayment_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="ExciseDuty_LoanAppraisalBuffer">
+          <DataField>ExciseDuty_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="ExciseDuty_LoanAppraisalBufferFormat">
+          <DataField>ExciseDuty_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="TopUpAppraisal_LoanAppraisalBuffer">
+          <DataField>TopUpAppraisal_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="TopUpAppraisal_LoanAppraisalBufferFormat">
+          <DataField>TopUpAppraisal_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="TopUpPenalty_LoanAppraisalBuffer">
+          <DataField>TopUpPenalty_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="TopUpPenalty_LoanAppraisalBufferFormat">
+          <DataField>TopUpPenalty_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="TotalFinancing_LoanAppraisalBuffer">
+          <DataField>TotalFinancing_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="TotalFinancing_LoanAppraisalBufferFormat">
+          <DataField>TotalFinancing_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="RecommendedAmount_LoanAppraisalBuffer">
+          <DataField>RecommendedAmount_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="RecommendedAmount_LoanAppraisalBufferFormat">
+          <DataField>RecommendedAmount_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="ClassCDeposits_LoanAppraisalBuffer">
+          <DataField>ClassCDeposits_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="ClassCDeposits_LoanAppraisalBufferFormat">
+          <DataField>ClassCDeposits_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="MicroDeposits_LoanAppraisalBuffer">
+          <DataField>MicroDeposits_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="MicroDeposits_LoanAppraisalBufferFormat">
+          <DataField>MicroDeposits_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="CompanyInfoName">
+          <DataField>CompanyInfoName</DataField>
+        </Field>
+        <Field Name="EntranceFee_LoanAppraisalBuffer">
+          <DataField>EntranceFee_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="EntranceFee_LoanAppraisalBufferFormat">
+          <DataField>EntranceFee_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="Multiplier_LoanAppraisalBuffer">
+          <DataField>Multiplier_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="Multiplier_LoanAppraisalBufferFormat">
+          <DataField>Multiplier_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="LoanNo_LoanAppraisalBuffer">
+          <DataField>LoanNo_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="MemberNo_LoanAppraisalBuffer">
+          <DataField>MemberNo_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="LoanDisbursementAccount_LoanAppraisalBuffer">
+          <DataField>LoanDisbursementAccount_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="Name_LoanAppraisalBuffer">
+          <DataField>Name_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="ProductCode_LoanAppraisalBuffer">
+          <DataField>ProductCode_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="RequestedAmount_LoanAppraisalBuffer">
+          <DataField>RequestedAmount_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="RequestedAmount_LoanAppraisalBufferFormat">
+          <DataField>RequestedAmount_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="ApprovedAmount_LoanAppraisalBuffer">
+          <DataField>ApprovedAmount_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="ApprovedAmount_LoanAppraisalBufferFormat">
+          <DataField>ApprovedAmount_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="ClassADeposits_LoanAppraisalBuffer">
+          <DataField>ClassADeposits_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="ClassADeposits_LoanAppraisalBufferFormat">
+          <DataField>ClassADeposits_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="ClassBDeposits_LoanAppraisalBuffer">
+          <DataField>ClassBDeposits_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="ClassBDeposits_LoanAppraisalBufferFormat">
+          <DataField>ClassBDeposits_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="TotalDeposits_LoanAppraisalBuffer">
+          <DataField>TotalDeposits_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="TotalDeposits_LoanAppraisalBufferFormat">
+          <DataField>TotalDeposits_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="ExistingLoans_LoanAppraisalBuffer">
+          <DataField>ExistingLoans_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="ExistingLoans_LoanAppraisalBufferFormat">
+          <DataField>ExistingLoans_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="Installments_LoanAppraisalBuffer">
+          <DataField>Installments_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="Installments_LoanAppraisalBufferFormat">
+          <DataField>Installments_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="AmountGuaranteed_LoanAppraisalBuffer">
+          <DataField>AmountGuaranteed_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="AmountGuaranteed_LoanAppraisalBufferFormat">
+          <DataField>AmountGuaranteed_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="NoofGuarantors_LoanAppraisalBuffer">
+          <DataField>NoofGuarantors_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="NoofGuarantors_LoanAppraisalBufferFormat">
+          <DataField>NoofGuarantors_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="SalaryThroughFosa_LoanAppraisalBuffer">
+          <DataField>SalaryThroughFosa_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="ShareCapital_LoanAppraisalBuffer">
+          <DataField>ShareCapital_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="ShareCapital_LoanAppraisalBufferFormat">
+          <DataField>ShareCapital_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="BranchCode_LoanAppraisalBuffer">
+          <DataField>BranchCode_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="ActivityCode_LoanAppraisalBuffer">
+          <DataField>ActivityCode_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="PreviousContribution_LoanAppraisalBuffer">
+          <DataField>PreviousContribution_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="PreviousContribution_LoanAppraisalBufferFormat">
+          <DataField>PreviousContribution_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="Deposits_LoanAppraisalBuffer">
+          <DataField>Deposits_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="Deposits_LoanAppraisalBufferFormat">
+          <DataField>Deposits_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="DepositFinancing_LoanAppraisalBuffer">
+          <DataField>DepositFinancing_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="DepositFinancing_LoanAppraisalBufferFormat">
+          <DataField>DepositFinancing_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="DepositMultiplier_LoanAppraisalBuffer">
+          <DataField>DepositMultiplier_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="DepositMultiplier_LoanAppraisalBufferFormat">
+          <DataField>DepositMultiplier_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="LoanOutstanding_LoanAppraisalBuffer">
+          <DataField>LoanOutstanding_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="LoanOutstanding_LoanAppraisalBufferFormat">
+          <DataField>LoanOutstanding_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="PrincipleTopUp_LoanAppraisalBuffer">
+          <DataField>PrincipleTopUp_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="PrincipleTopUp_LoanAppraisalBufferFormat">
+          <DataField>PrincipleTopUp_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="MaximumCredit_LoanAppraisalBuffer">
+          <DataField>MaximumCredit_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="MaximumCredit_LoanAppraisalBufferFormat">
+          <DataField>MaximumCredit_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="MinimumShareCapital_LoanAppraisalBuffer">
+          <DataField>MinimumShareCapital_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="MinimumShareCapital_LoanAppraisalBufferFormat">
+          <DataField>MinimumShareCapital_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="CurrentShareCapital_LoanAppraisalBuffer">
+          <DataField>CurrentShareCapital_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="CurrentShareCapital_LoanAppraisalBufferFormat">
+          <DataField>CurrentShareCapital_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="DeficitShareCapital_LoanAppraisalBuffer">
+          <DataField>DeficitShareCapital_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="DeficitShareCapital_LoanAppraisalBufferFormat">
+          <DataField>DeficitShareCapital_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="ShareFinancing_LoanAppraisalBuffer">
+          <DataField>ShareFinancing_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="ShareFinancing_LoanAppraisalBufferFormat">
+          <DataField>ShareFinancing_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="AverageIncome_LoanAppraisalBuffer">
+          <DataField>AverageIncome_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="AverageIncome_LoanAppraisalBufferFormat">
+          <DataField>AverageIncome_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="Earnings_LoanAppraisalBuffer">
+          <DataField>Earnings_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="Earnings_LoanAppraisalBufferFormat">
+          <DataField>Earnings_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="Allowances_LoanAppraisalBuffer">
+          <DataField>Allowances_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="Allowances_LoanAppraisalBufferFormat">
+          <DataField>Allowances_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="Deductions_LoanAppraisalBuffer">
+          <DataField>Deductions_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="Deductions_LoanAppraisalBufferFormat">
+          <DataField>Deductions_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="V23ofAverageIncome_LoanAppraisalBuffer">
+          <DataField>V23ofAverageIncome_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="V23ofAverageIncome_LoanAppraisalBufferFormat">
+          <DataField>V23ofAverageIncome_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="NetSalary_LoanAppraisalBuffer">
+          <DataField>NetSalary_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="NetSalary_LoanAppraisalBufferFormat">
+          <DataField>NetSalary_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="ExternalEffects_LoanAppraisalBuffer">
+          <DataField>ExternalEffects_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="ExternalEffects_LoanAppraisalBufferFormat">
+          <DataField>ExternalEffects_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="AdjustedNet_LoanAppraisalBuffer">
+          <DataField>AdjustedNet_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="AdjustedNet_LoanAppraisalBufferFormat">
+          <DataField>AdjustedNet_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="CurrentLoanRepayment_LoanAppraisalBuffer">
+          <DataField>CurrentLoanRepayment_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="CurrentLoanRepayment_LoanAppraisalBufferFormat">
+          <DataField>CurrentLoanRepayment_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="InterestTopUp_LoanAppraisalBuffer">
+          <DataField>InterestTopUp_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="InterestTopUp_LoanAppraisalBufferFormat">
+          <DataField>InterestTopUp_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="TopUpCommission_LoanAppraisalBuffer">
+          <DataField>TopUpCommission_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="TopUpCommission_LoanAppraisalBufferFormat">
+          <DataField>TopUpCommission_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="ExternalLoanCleared_LoanAppraisalBuffer">
+          <DataField>ExternalLoanCleared_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="ExternalLoanCleared_LoanAppraisalBufferFormat">
+          <DataField>ExternalLoanCleared_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="ExternalLoanCommission_LoanAppraisalBuffer">
+          <DataField>ExternalLoanCommission_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="ExternalLoanCommission_LoanAppraisalBufferFormat">
+          <DataField>ExternalLoanCommission_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="TotalCharges_LoanAppraisalBuffer">
+          <DataField>TotalCharges_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="TotalCharges_LoanAppraisalBufferFormat">
+          <DataField>TotalCharges_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="NetTakeHome_LoanAppraisalBuffer">
+          <DataField>NetTakeHome_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="NetTakeHome_LoanAppraisalBufferFormat">
+          <DataField>NetTakeHome_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="QualificationAsPerDeposits_LoanAppraisalBuffer">
+          <DataField>QualificationAsPerDeposits_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="QualificationAsPerDeposits_LoanAppraisalBufferFormat">
+          <DataField>QualificationAsPerDeposits_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="QualificationasPerIncome_LoanAppraisalBuffer">
+          <DataField>QualificationasPerIncome_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="QualificationasPerIncome_LoanAppraisalBufferFormat">
+          <DataField>QualificationasPerIncome_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="QualificationasPerGuarantor_LoanAppraisalBuffer">
+          <DataField>QualificationasPerGuarantor_LoanAppraisalBuffer</DataField>
+        </Field>
+        <Field Name="QualificationasPerGuarantor_LoanAppraisalBufferFormat">
+          <DataField>QualificationasPerGuarantor_LoanAppraisalBufferFormat</DataField>
+        </Field>
+        <Field Name="ReportForNavId_50">
+          <DataField>ReportForNavId_50</DataField>
+        </Field>
+        <Field Name="LoanNo_Loans">
+          <DataField>LoanNo_Loans</DataField>
+        </Field>
+        <Field Name="LoanProductType_Loans">
+          <DataField>LoanProductType_Loans</DataField>
+        </Field>
+        <Field Name="MemberNo_Loans">
+          <DataField>MemberNo_Loans</DataField>
+        </Field>
+        <Field Name="ApprovedAmount_Loans">
+          <DataField>ApprovedAmount_Loans</DataField>
+        </Field>
+        <Field Name="ApprovedAmount_LoansFormat">
+          <DataField>ApprovedAmount_LoansFormat</DataField>
+        </Field>
+        <Field Name="DisbursementDate_Loans">
+          <DataField>DisbursementDate_Loans</DataField>
+        </Field>
+        <Field Name="OutstandingBalance_Loans">
+          <DataField>OutstandingBalance_Loans</DataField>
+        </Field>
+        <Field Name="OutstandingBalance_LoansFormat">
+          <DataField>OutstandingBalance_LoansFormat</DataField>
+        </Field>
+        <Field Name="OutstandingInterest_Loans">
+          <DataField>OutstandingInterest_Loans</DataField>
+        </Field>
+        <Field Name="OutstandingInterest_LoansFormat">
+          <DataField>OutstandingInterest_LoansFormat</DataField>
+        </Field>
+        <Field Name="OutstandingBills_Loans">
+          <DataField>OutstandingBills_Loans</DataField>
+        </Field>
+        <Field Name="LoansCategorySASRA_Loans">
+          <DataField>LoansCategorySASRA_Loans</DataField>
+        </Field>
+        <Field Name="ReportForNavId_60">
+          <DataField>ReportForNavId_60</DataField>
+        </Field>
+        <Field Name="SavingsAccountNoMemberNo_LoanGuarantorsandSecurity">
+          <DataField>SavingsAccountNoMemberNo_LoanGuarantorsandSecurity</DataField>
+        </Field>
+        <Field Name="Name_LoanGuarantorsandSecurity">
+          <DataField>Name_LoanGuarantorsandSecurity</DataField>
+        </Field>
+        <Field Name="AmountGuaranteed_LoanGuarantorsandSecurity">
+          <DataField>AmountGuaranteed_LoanGuarantorsandSecurity</DataField>
+        </Field>
+        <Field Name="AmountGuaranteed_LoanGuarantorsandSecurityFormat">
+          <DataField>AmountGuaranteed_LoanGuarantorsandSecurityFormat</DataField>
+        </Field>
+        <Field Name="AvailableGuarantorship_LoanGuarantorsandSecurity">
+          <DataField>AvailableGuarantorship_LoanGuarantorsandSecurity</DataField>
+        </Field>
+        <Field Name="AvailableGuarantorship_LoanGuarantorsandSecurityFormat">
+          <DataField>AvailableGuarantorship_LoanGuarantorsandSecurityFormat</DataField>
+        </Field>
+        <Field Name="GuarantorType_LoanGuarantorsandSecurity">
+          <DataField>GuarantorType_LoanGuarantorsandSecurity</DataField>
+        </Field>
+        <Field Name="ReportForNavId_66">
+          <DataField>ReportForNavId_66</DataField>
+        </Field>
+        <Field Name="ChargeCode_CurrentLoanCharges">
+          <DataField>ChargeCode_CurrentLoanCharges</DataField>
+        </Field>
+        <Field Name="Description_CurrentLoanCharges">
+          <DataField>Description_CurrentLoanCharges</DataField>
+        </Field>
+        <Field Name="Amount_CurrentLoanCharges">
+          <DataField>Amount_CurrentLoanCharges</DataField>
+        </Field>
+        <Field Name="Amount_CurrentLoanChargesFormat">
+          <DataField>Amount_CurrentLoanChargesFormat</DataField>
+        </Field>
+        <Field Name="TotalCharge_CurrentLoanCharges">
+          <DataField>TotalCharge_CurrentLoanCharges</DataField>
+        </Field>
+        <Field Name="TotalCharge_CurrentLoanChargesFormat">
+          <DataField>TotalCharge_CurrentLoanChargesFormat</DataField>
+        </Field>
+        <Field Name="ExciseDuty_CurrentLoanCharges">
+          <DataField>ExciseDuty_CurrentLoanCharges</DataField>
+        </Field>
+        <Field Name="ExciseDuty_CurrentLoanChargesFormat">
+          <DataField>ExciseDuty_CurrentLoanChargesFormat</DataField>
+        </Field>
+        <Field Name="ReportForNavId_81">
+          <DataField>ReportForNavId_81</DataField>
+        </Field>
+        <Field Name="ChargeDescription_PCharges">
+          <DataField>ChargeDescription_PCharges</DataField>
+        </Field>
+        <Field Name="ProductCharge">
+          <DataField>ProductCharge</DataField>
+        </Field>
+        <Field Name="ProductChargeFormat">
+          <DataField>ProductChargeFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
